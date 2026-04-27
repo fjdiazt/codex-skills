@@ -1,4 +1,4 @@
 interface:
   display_name: "FD Git Init"
   short_description: "Safely initialize project Git repos"
-  default_prompt: "Use $fd-git-init to safely initialize Git for this project folder, detect nested repo boundaries, add a project-type-aware .gitignore, optionally generate a README from real project files, and configure origin, commit, or push only with explicit authorization."
+  default_prompt: "Use $fd-git-init to inspect this folder before initializing Git. If it is already a repo or contains nested repos, report and stop; otherwise ask for README/origin choices, then initialize safely."

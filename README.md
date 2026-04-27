@@ -11,7 +11,7 @@ Personal Codex skills for guarded engineering workflows.
 | `fd-discovery` | Investigate code read-only, validate or falsify theories, and report evidence-backed call chains or root-cause boundaries. |
 | `fd-findings` | Maintain durable Markdown findings documents for investigations and operational notes. |
 | `fd-fix` | Implement a discussed fix after the issue, target behavior, and intended change are clear. |
-| `fd-git-init` | Safely initialize Git repos with nested-boundary checks, project-aware `.gitignore`, optional README, origin, commit, and push gates. |
+| `fd-git-init` | Safely initialize Git repos; report and stop on existing or nested repos, otherwise ask README/origin choices before writing files. |
 | `fd-load` | Load saved context and continue prior work from handover notes or related Markdown. |
 | `fd-note` | Briefly acknowledge non-actionable user notes without turning them into tasks. |
 | `fd-proceed` | Continue an already-discussed plan while pausing for ambiguous, risky, newly discovered, or out-of-scope decisions. |
