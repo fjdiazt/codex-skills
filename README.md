@@ -2,6 +2,15 @@
 
 Personal Codex skills for guarded engineering workflows, organized into a streamlined "Morphic Triad" architecture. These skills are agent-agnostic and focus on intent-based command patterns to minimize context switching and manual routing.
 
+## Installation
+
+Clone this repository directly into your Codex skills directory:
+
+```powershell
+cd $HOME\.codex\skills
+git clone https://github.com/fjdiazt/codex-skills.git .
+```
+
 ## The Core Triad
 
 | Skill | Category | Trigger Keywords | Purpose |
