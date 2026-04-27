@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Fix"
-  short_description: "Apply only a clear discussed fix"
-  default_prompt: "Use $fd-fix to implement the discussed fix, asking for clarification first if the issue or intended change is not clear."

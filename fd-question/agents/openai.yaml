@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Question"
-  short_description: "Answer questions without editing files"
-  default_prompt: "Use $fd-question to answer this question directly, inspecting local context only if needed and making no edits."

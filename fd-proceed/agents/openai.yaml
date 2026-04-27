@@ -1,4 +1,7 @@
-interface:
-  display_name: "FD Proceed"
-  short_description: "Proceed with a plan, stopping on surprises"
-  default_prompt: "Use $fd-proceed to execute the immediately preceding concrete plan or proposal, pausing to ask before unforeseen, risky, ambiguous, out-of-scope, or newly discovered decision points."
+name: fd-proceed
+description: Execute implementation with variable guardrails (YOLO, Proceed, or Fix modes).
+prompt: |
+  I will implement the requested changes. 
+  If you said "yolo", I will act with maximum autonomy. 
+  If you said "proceed", I will stick strictly to our agreed plan and stop on surprises. 
+  If you said "fix", I will focus surgically on the targeted issue.

@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Findings"
-  short_description: "Maintain indexed findings Markdown docs"
-  default_prompt: "Use $fd-findings to append these findings to docs/findings.md with a table of contents."

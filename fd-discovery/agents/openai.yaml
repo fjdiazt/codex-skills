@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Discovery"
-  short_description: "Read-only codebase exploration"
-  default_prompt: "Use $fd-discovery to read repo docs first, investigate this codebase read-only, validate or falsify the current theory with real code evidence, and report the root-cause boundary with file references."

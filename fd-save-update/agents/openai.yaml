@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Save Update"
-  short_description: "Update latest saved note"
-  default_prompt: "Use $fd-save-update to update the latest docs/handover.md entry instead of appending a new one."

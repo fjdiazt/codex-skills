@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Architect"
-  short_description: "Challenge requirements with product and architecture judgment"
-  default_prompt: "Use $fd-architect to evaluate this requirement as a senior app owner and architect before proceeding. Read relevant repo docs and code, watch for feature creep, push back only when there is concrete risk, and recommend the clearest path."

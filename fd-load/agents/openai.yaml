@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Load"
-  short_description: "Load saved context"
-  default_prompt: "Use $fd-load to read docs/handover.md and relevant Markdown, then continue prior work."

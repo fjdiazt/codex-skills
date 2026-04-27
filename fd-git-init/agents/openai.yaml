@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Git Init"
-  short_description: "Safely initialize project Git repos"
-  default_prompt: "Use $fd-git-init to inspect this folder before initializing Git. If it is already a repo or contains nested repos, report and stop; otherwise ask for README/origin choices, then initialize safely."
