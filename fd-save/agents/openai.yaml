@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Save"
+  short_description: "Save concise continuation notes"
+  default_prompt: "Use $fd-save to append a short continuation note to docs/handover.md."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Note"
+  short_description: "Acknowledge notes without action"
+  default_prompt: "Use $fd-note to briefly acknowledge a note without repeating it back or taking action."

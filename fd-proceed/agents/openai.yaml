@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Proceed"
+  short_description: "Proceed with a plan, stopping on surprises"
+  default_prompt: "Use $fd-proceed to execute the immediately preceding concrete plan or proposal, stopping to ask before unforeseen, risky, ambiguous, or out-of-scope work."
