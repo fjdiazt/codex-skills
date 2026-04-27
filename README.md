@@ -30,21 +30,21 @@ git clone https://github.com/fjdiazt/codex-skills.git .
 Each skill automatically shifts its behavior based on the keywords in your prompt.
 
 ### Research (`/fd-scan`)
-- **Discovery**: `/fd-scan trace the data flow from the login API to the DB.`
-- **Sniff**: `/fd-scan sniff the auth module for architecture drift.`
-- **Triage**: `/fd-scan bug triage this error log: [log snippet]`
-- **Review**: `/fd-scan review this proposal for the new caching layer.`
+- **Discovery**: `/fd-scan "Can you trace the call chain from the LoginController down to the repository? I need to see where the password hash is verified."`
+- **Sniff**: `/fd-scan "Sniff the src/services folder for any logic duplication or brittle error handling. I suspect we're over-abstracting the DB layer."`
+- **Triage**: `/fd-scan "Bug: I'm seeing a 500 error on the /users endpoint when the payload is empty. Can you triage the root cause?"`
+- **Review**: `/fd-scan "Pushback on this plan to add a global singleton for state management. Is this actually necessary or just feature creep?"`
 
 ### Execution (`/fd-proceed`)
-- **Fix**: `/fd-proceed fix the race condition we found in the auth service.`
-- **Proceed**: `/fd-proceed with the agreed plan to migrate the schema.`
-- **YOLO**: `/fd-proceed yolo - wire up the new UI component to the backend.`
+- **Fix**: `/fd-proceed "Fix the NullPointerException in AuthService.ts:142 that occurs when the token is expired."`
+- **Proceed**: `/fd-proceed "Proceed with the agreed plan to migrate the user schema to the new profile-based structure."`
+- **YOLO**: `/fd-proceed "YOLO - just wire up the submit button to the API. Don't worry about the styling or the loading states yet."`
 
 ### State & Context (`/fd-state`)
-- **Note**: `/fd-state note: the staging server is currently down.` (Agent: "Noted.")
-- **Save**: `/fd-state save our current progress for handoff.`
-- **Load**: `/fd-state load the latest session findings.`
-- **Finding**: `/fd-state finding: the bottleneck is in the JSON serializer.`
+- **Note**: `/fd-state "Note: the staging database is using a temporary API key that expires in 24 hours."`
+- **Save**: `/fd-state "Save a handover note for the morning shift. I'm stopping midway through the refactor."`
+- **Load**: `/fd-state "Load the context from yesterday's session and summarize what's left to do on the auth migration."`
+- **Finding**: `/fd-state "Finding: the bottleneck in the sync process is actually the JSON deserialization in the worker thread."`
 
 ## Operational Philosophy
 
