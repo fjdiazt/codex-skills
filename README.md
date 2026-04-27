@@ -1,25 +1,27 @@
 # Codex Skills
 
-Personal Codex skills for guarded engineering workflows.
+Personal Codex skills for guarded engineering workflows, organized into a streamlined "Morphic Triad" architecture. These skills are agent-agnostic and focus on intent-based command patterns to minimize context switching and manual routing.
 
-## Contents
+## The Core Triad
+
+| Skill | Category | Trigger Keywords | Purpose |
+| --- | --- | --- | --- |
+| `fd-scan` | **Research** | `scan`, `sniff`, `bug`, `review`, `architect` | Read-only investigation, code audits (debt/smells), bug triage, and architectural reviews/pushback. |
+| `fd-proceed` | **Execution** | `fix`, `proceed`, `yolo`, `ship it` | Implementation of changes with variable guardrails, from surgical fixes to hands-off autonomous shipping. |
+| `fd-state` | **Admin** | `note`, `save`, `load`, `update`, `finding` | Session state management, handover notes, durable investigation logs, and brief acknowledgments. |
+
+## Specialized Tools
 
 | Skill | Purpose |
 | --- | --- |
-| `fd-architect` | Evaluate requirements and implementation directions from an app-owner and architecture perspective, including feature-creep risk, before acting. |
-| `fd-bug` | Triage observed issues that may or may not be bugs before moving into a fix. |
-| `fd-discovery` | Investigate code read-only, validate or falsify theories, and report evidence-backed call chains or root-cause boundaries. |
-| `fd-findings` | Maintain durable Markdown findings documents for investigations and operational notes. |
-| `fd-fix` | Implement a discussed fix after the issue, target behavior, and intended change are clear. |
-| `fd-git-init` | Safely initialize Git repos; report and stop on existing or nested repos, otherwise ask README/origin choices before writing files. |
-| `fd-load` | Load saved context and continue prior work from handover notes or related Markdown. |
-| `fd-note` | Briefly acknowledge non-actionable user notes without turning them into tasks. |
-| `fd-proceed` | Continue an already-discussed plan while pausing for ambiguous, risky, newly discovered, or out-of-scope decisions. |
-| `fd-question` | Answer questions without editing files unless the user explicitly asks for changes. |
-| `fd-save` | Save a concise continuation note for handoff or resume. |
-| `fd-save-update` | Update the latest saved note with corrections or late findings. |
-| `fd-sniff` | Read-only audit for real code smells, architecture drift, workaround patches, and technical debt, sorted by severity. |
-| `fd-yolo` | Implement a clear request hands-off: infer implementation details, avoid implementation-choice questions, and keep going until done unless a safety stop applies. |
+| `fd-git` | Repository lifecycle operations (e.g., `init`) and project-specific Git workflow macros. |
+
+## Operational Philosophy
+
+- **Posture Over Task**: Each skill represents a distinct mental "hat" (e.g., Skeptical Owner, Forensic Investigator, Surgical Coder).
+- **Intent Mapping**: Use specific keywords within a skill to shift the agent's internal logic branch without switching the entire instruction set.
+- **Evidence-First**: All findings and actions must be backed by concrete codebase evidence (file paths, line numbers, and documentation).
+- **Read-Only Research**: Research and triage skills (`fd-scan`) are strictly forbidden from editing files to ensure objective analysis.
 
 ## Layout
 
@@ -32,10 +34,6 @@ fd-skill-name/
 ```
 
 `SKILL.md` contains the trigger metadata and workflow instructions. `agents/openai.yaml` contains the UI-facing display name, short description, and default prompt.
-
-## Local Files
-
-The `.system/` folder is ignored because it contains system-managed skill tooling, not this repo's authored skills.
 
 ## Validation
 
