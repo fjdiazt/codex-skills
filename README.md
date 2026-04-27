@@ -25,6 +25,27 @@ git clone https://github.com/fjdiazt/codex-skills.git .
 | --- | --- |
 | `fd-git` | Repository lifecycle operations (e.g., `init`) and project-specific Git workflow macros. |
 
+## Usage Examples
+
+Each skill automatically shifts its behavior based on the keywords in your prompt.
+
+### Research (`/fd-scan`)
+- **Discovery**: `/fd-scan trace the data flow from the login API to the DB.`
+- **Sniff**: `/fd-scan sniff the auth module for architecture drift.`
+- **Triage**: `/fd-scan bug triage this error log: [log snippet]`
+- **Review**: `/fd-scan review this proposal for the new caching layer.`
+
+### Execution (`/fd-proceed`)
+- **Fix**: `/fd-proceed fix the race condition we found in the auth service.`
+- **Proceed**: `/fd-proceed with the agreed plan to migrate the schema.`
+- **YOLO**: `/fd-proceed yolo - wire up the new UI component to the backend.`
+
+### State & Context (`/fd-state`)
+- **Note**: `/fd-state note: the staging server is currently down.` (Agent: "Noted.")
+- **Save**: `/fd-state save our current progress for handoff.`
+- **Load**: `/fd-state load the latest session findings.`
+- **Finding**: `/fd-state finding: the bottleneck is in the JSON serializer.`
+
 ## Operational Philosophy
 
 - **Posture Over Task**: Each skill represents a distinct mental "hat" (e.g., Skeptical Owner, Forensic Investigator, Surgical Coder).
