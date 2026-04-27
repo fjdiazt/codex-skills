@@ -7,6 +7,7 @@ Personal Codex skills for guarded engineering workflows.
 | Skill | Purpose |
 | --- | --- |
 | `fd-architect` | Evaluate requirements and implementation directions from an app-owner and architecture perspective before acting. |
+| `fd-bug` | Triage observed issues that may or may not be bugs before moving into a fix. |
 | `fd-discovery` | Investigate code read-only, validate or falsify theories, and report evidence-backed call chains or root-cause boundaries. |
 | `fd-findings` | Maintain durable Markdown findings documents for investigations and operational notes. |
 | `fd-fix` | Implement a discussed fix after the issue, target behavior, and intended change are clear. |
