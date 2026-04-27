@@ -6,7 +6,7 @@ Personal Codex skills for guarded engineering workflows.
 
 | Skill | Purpose |
 | --- | --- |
-| `fd-architect` | Evaluate requirements and implementation directions from an app-owner and architecture perspective before acting. |
+| `fd-architect` | Evaluate requirements and implementation directions from an app-owner and architecture perspective, including feature-creep risk, before acting. |
 | `fd-bug` | Triage observed issues that may or may not be bugs before moving into a fix. |
 | `fd-discovery` | Investigate code read-only, validate or falsify theories, and report evidence-backed call chains or root-cause boundaries. |
 | `fd-findings` | Maintain durable Markdown findings documents for investigations and operational notes. |
@@ -14,12 +14,12 @@ Personal Codex skills for guarded engineering workflows.
 | `fd-git-init` | Safely initialize Git repos with nested-boundary checks, project-aware `.gitignore`, optional README, origin, commit, and push gates. |
 | `fd-load` | Load saved context and continue prior work from handover notes or related Markdown. |
 | `fd-note` | Briefly acknowledge non-actionable user notes without turning them into tasks. |
-| `fd-proceed` | Continue an already-discussed plan while stopping on surprises or scope changes. |
+| `fd-proceed` | Continue an already-discussed plan while pausing for ambiguous, risky, newly discovered, or out-of-scope decisions. |
 | `fd-question` | Answer questions without editing files unless the user explicitly asks for changes. |
 | `fd-save` | Save a concise continuation note for handoff or resume. |
 | `fd-save-update` | Update the latest saved note with corrections or late findings. |
 | `fd-sniff` | Read-only audit for real code smells, architecture drift, workaround patches, and technical debt, sorted by severity. |
-| `fd-yolo` | Implement a clear request directly with minimal ceremony while preserving safety gates. |
+| `fd-yolo` | Implement a clear request hands-off: infer implementation details, avoid implementation-choice questions, and keep going until done unless a safety stop applies. |
 
 ## Layout
 

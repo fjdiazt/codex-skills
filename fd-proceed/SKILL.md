@@ -1,11 +1,11 @@
 ---
 name: fd-proceed
-description: Continue with an already-discussed plan, approach, or next step while keeping guardrails. Use when the user says proceed, go ahead, continue, do it, implement the plan, or similar after Codex has proposed a plan or path; treat that as approval to execute the immediately preceding concrete plan or proposal. Execute the agreed work, but stop and ask before handling unforeseen issues, out-of-scope changes, risky operations, materially different choices, or ambiguous deviations.
+description: Continue with an already-discussed plan, approach, or next step while keeping guardrails. Use when the user says proceed, go ahead, continue, do it, implement the plan, or similar after Codex has proposed a plan or path; treat that as approval to execute the immediately preceding concrete plan or proposal. Execute the agreed work, but pause or ask before handling unforeseen issues, out-of-scope changes, risky operations, materially different choices, ambiguous deviations, or newly discovered decisions.
 ---
 
 # FD Proceed
 
-Proceed with the agreed plan. Stop on surprises.
+Proceed with the agreed plan. Pause on surprises.
 
 ## Proposal Approval
 
@@ -33,6 +33,7 @@ Stay inside the accepted plan:
 - Use existing project patterns and documented commands.
 - Preserve user edits in a dirty worktree.
 - Run the cheapest meaningful verification available.
+- Ask when work discovered along the way is ambiguous, outside the accepted plan, or materially changes the implementation direction.
 
 Stop and ask first when:
 
@@ -43,6 +44,7 @@ Stop and ask first when:
 - the operation could delete data, overwrite user work, affect production paths, or require credentials
 - verification reveals a new failure that is not part of the agreed work
 - continuing would require guessing the user's preference
+- a newly found issue deserves a separate decision before it is folded into the current work
 
 ## Workflow
 
@@ -58,7 +60,7 @@ Stop and ask first when:
 - Keep updates short and operational.
 - Do not re-litigate the plan unless new evidence changes it.
 - Do not bury surprises inside the final answer after acting on them.
-- If stopping, state the specific unforeseen or out-of-scope issue and the decision needed.
+- If pausing, state the specific unforeseen, ambiguous, or out-of-scope issue and the decision needed.
 
 ## Report Shape
 
