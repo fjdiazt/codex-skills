@@ -87,6 +87,16 @@ C:\Users\Fred\.codex\plugins\commands\
 - Keep `agents/openai.yaml` as UI metadata; behavior belongs in `SKILL.md`.
 - Use `references/` for optional supporting docs that should load only when needed.
 
+## Upstream Sources
+
+Some skills were adapted from Matt Pocock's public skills repo:
+
+| Local skill | Upstream source |
+| --- | --- |
+| `fd-refine` | Adapted from `grill-me`, renamed and reframed around requirements refinement and architecture alignment. |
+| `fd-refine-and-doc` | Adapted from [`grill-with-docs`](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs). |
+| `fd-improve-architecture` | Adapted from [`improve-codebase-architecture`](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture). |
+
 ## Layout
 
 Each skill lives in its own folder:
