@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Code Review"
+  short_description: "Review uncommitted code changes for real risks."
+  default_prompt: "$fd-code-review Review the uncommitted changes in this repository."

@@ -20,6 +20,7 @@ git clone https://github.com/fjdiazt/codex-skills.git .
 | `fd-improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
 | `fd-discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd-triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
+| `fd-code-review` | Review uncommitted local changes before commit or PR for blatant violations, low-hanging defects, likely regressions, and meaningful test gaps. |
 | `fd-sniff` | Read-only smell and technical-debt audit focused on real issues, not nice-to-haves. |
 | `fd-trace` | Add and use diagnostic trace logs optimized for Codex/agent debugging and root-cause investigation. |
 | `fd-proceed` | Execute an agreed plan or targeted fix while stopping on surprises or ambiguous behavior. |
@@ -47,6 +48,10 @@ $fd-discovery "Trace the call chain from the LoginController to the password has
 
 ```text
 $fd-triage "Bug: /users returns 500 when payload is empty. Triage before fixing."
+```
+
+```text
+$fd-code-review "Review my uncommitted changes before I commit."
 ```
 
 ```text
