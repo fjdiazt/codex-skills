@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Triage"
+  short_description: "Triage observed issues before fixing"
+  default_prompt: "Use $fd-triage to triage this observed issue before fixing: gather evidence, ask for logs only if needed, classify whether it is a bug, and check regression test coverage."

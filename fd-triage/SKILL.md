@@ -1,9 +1,9 @@
 ---
-name: fd-bug
+name: fd-triage
 description: Triage a newly observed issue that may or may not be a bug. Use when the user reports suspicious behavior, an error, a regression, unexpected output, failed workflow, or possible defect and wants Codex to investigate before fixing. Gather evidence, ask for logs only when needed, reproduce or trace the issue when possible, check existing tests or regression coverage, classify confidence, and report an initial diagnosis with next recommended action. Do not implement a fix unless explicitly asked.
 ---
 
-# FD Bug
+# FD Triage
 
 Triage first. Do not assume it is a bug.
 

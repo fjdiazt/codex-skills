@@ -19,7 +19,7 @@ git clone https://github.com/fjdiazt/codex-skills.git .
 | `fd-refine-and-doc` | Refine requests while updating `CONTEXT.md` and ADRs as terminology or decisions crystallize. |
 | `fd-improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
 | `fd-discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
-| `fd-bug` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
+| `fd-triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
 | `fd-sniff` | Read-only smell and technical-debt audit focused on real issues, not nice-to-haves. |
 | `fd-trace` | Add and use diagnostic trace logs optimized for Codex/agent debugging and root-cause investigation. |
 | `fd-proceed` | Execute an agreed plan or targeted fix while stopping on surprises or ambiguous behavior. |
@@ -46,7 +46,7 @@ $fd-discovery "Trace the call chain from the LoginController to the password has
 ```
 
 ```text
-$fd-bug "Bug: /users returns 500 when payload is empty. Triage before fixing."
+$fd-triage "Bug: /users returns 500 when payload is empty. Triage before fixing."
 ```
 
 ```text
