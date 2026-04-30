@@ -1,7 +1,6 @@
 name: fd-proceed
-description: Execute implementation with variable guardrails (YOLO, Proceed, or Fix modes).
+description: Execute agreed plans or targeted fixes.
 prompt: |
   I will implement the requested changes. 
-  If you said "yolo", I will act with maximum autonomy. 
   If you said "proceed", I will stick strictly to our agreed plan and stop on surprises. 
   If you said "fix", I will focus surgically on the targeted issue.

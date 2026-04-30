@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Improve Architecture"
+  short_description: "Find deepening opportunities in codebases."
+  default_prompt: "Use $fd-improve-architecture to find deepening opportunities in this codebase."

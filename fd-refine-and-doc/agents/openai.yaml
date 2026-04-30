@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Refine And Doc"
+  short_description: "Refine requirements and update docs inline."
+  default_prompt: "Use $fd-refine-and-doc to refine this request against the repo's domain docs and update CONTEXT.md or ADRs as decisions crystallize."

@@ -1,51 +1,35 @@
 ---
 name: fd-proceed
-description: Execute an implementation or fix. Use when the user says "proceed", "fix", "yolo", "ship it". Supports YOLO, Proceed, and Fix modes.
+description: Execute an agreed implementation plan or a targeted fix. Use when the user says "proceed", "fix", "patch this", or "continue". Supports Proceed and Fix modes. For hands-off high-autonomy execution, use fd-yolo instead.
 ---
 
 # FD Proceed
 
-Implement changes with variable guardrails.
+Implement changes after the target behavior or plan is clear.
 
-## Execution Modes
+## Modes
 
-1. **YOLO Mode**: Triggered by "yolo", "ship it", "fast".
-   - **Posture**: High autonomy. Make decisions independently.
-   - **Stop conditions**: Only stop for unsafe operations or missing credentials.
+1. **Proceed (Default)**: Execute an agreed plan. Stop on surprise or out-of-scope discoveries.
+2. **Fix**: Surgical focus on a specific issue. Stop if target behavior is ambiguous or conflicts with repo evidence.
 
-2. **Proceed Mode (Default)**: Triggered by "proceed", "continue", "do it".
-   - **Posture**: Plan-adherent. Execute the agreed plan.
-   - **Stop conditions**: Stop on surprises, out-of-scope discoveries, or material architectural decisions.
+## Guardrails
 
-3. **Fix Mode**: Triggered by "fix", "patch", "implement".
-   - **Posture**: Surgical. Focus exclusively on the established bug/issue.
-   - **Stop conditions**: Stop if the fix target is ambiguous or conflicts with repo patterns.
-
-## Guardrails & Gates
-
-- **Gate**: Before editing, confirm the failure being fixed, the intended behavior, and the files involved.
-- **Clarification Trigger**: Stop if the previous discussion was exploratory/theoretical and no concrete plan was agreed upon.
-- **Dirty Worktree**: Preserve user edits; do not overwrite unstaged work without warning.
-- **Stop and Ask**: Pause if the plan's assumption is wrong, multiple paths become plausible, or verification reveals a new failure outside the agreed scope.
+- **Confirm**: Verify failure, intended behavior, and likely file list before editing.
+- **Dirty Worktree**: Warn before overwriting unstaged work.
+- **Logic Failure**: Stop if plan assumptions are wrong or multiple paths emerge.
+- **Style**: Respect active persona (e.g. caveman).
 
 ## Workflow
 
-1. **Identify Mode**: Determine the level of autonomy required.
-2. **Inspect**: Read relevant files and current state.
-3. **Act**: Apply the smallest coherent change. Adhere to project patterns.
-4. **Validate**: Run the cheapest meaningful verification (build/test/lint).
-5. **Report**: State what was implemented and verified.
+1. **Inspect**: Read relevant state/files.
+2. **Act**: Apply smallest coherent change matching project patterns.
+3. **Validate**: Run cheapest verification (build/test/lint).
+4. **Report**: State implementation and verification results.
 
 ## Report Shape
 
-```markdown
-[Mode]: Implemented ...
-
-Verified with ...
-```
+`[Mode]: Implemented [Summary]`
+`Verified: [Method]`
 
 If stopped:
-```markdown
-Stopped: [Reason]
-Need: [Decision or information]
-```
+`Stopped: [Reason]. Need: [Info/Decision].`

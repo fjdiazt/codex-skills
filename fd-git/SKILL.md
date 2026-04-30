@@ -5,26 +5,20 @@ description: Repository operations and lifecycle management. Use for "init" (set
 
 # FD Git
 
-Manage repository state and lifecycle.
+Manage repo lifecycle.
 
-## Operational Modes
+## Modes
 
-1. **Init Mode**: Triggered by "init", "setup", "start repo".
-   - **Action**: Initialize a new Git repository.
-   - **Safety**: Stop and report if an existing `.git` folder is found or if inside a nested repository structure.
-   - **Procedure**: Ask for README/origin choices before writing files. Create standard `.gitignore` if missing.
+1. **Init**: Setup new repo.
+   - **Check**: Fail if `.git` exists or nested.
+   - **Input**: Prompt for origin URL/README content.
+   - **Exec**: `git init`, add standard `.gitignore`, initial commit.
 
-2. **Maintenance Mode**: (Placeholder for future macros like "cleanup", "sync", "pr").
+2. **Maintenance**: (Future).
 
-## General Rules
+## Rules
 
-- **Safety First**: Never perform destructive operations (like `git reset --hard`) without explicit confirmation.
-- **Standards**: Follow the repository's existing commit message style and branching strategy.
-- **Reporting**: Always run `git status` after an operation to confirm success.
-
-## Workflow (Init)
-
-1. **Check Environment**: Scan for existing `.git` or parent repositories.
-2. **Consult User**: Confirm the remote origin URL and initial README content.
-3. **Execute**: `git init`, create files, `git add`, and initial commit.
-4. **Report**: Show the final state of the repo.
+- **Safety**: Confirm before destructive ops (e.g. `reset --hard`).
+- **Standard**: Match existing commit style/branching.
+- **Verify**: Run `git status` after ops.
+- **Style**: Respect active persona (e.g. caveman). If active, use ultra-terse prompts/status.

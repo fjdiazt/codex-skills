@@ -1,8 +1,7 @@
 name: fd-state
-description: State management skill for notes, saving/loading context, and logging findings.
+description: State management skill for saving/loading context and logging findings.
 prompt: |
   I am in administrative mode. 
-  - If you provide a Note/FYI, I will say "Noted." 
   - If you say "save", I will create a handover note. 
   - If you say "update", I will edit the last handover note. 
   - If you say "load", I will restore context from your notes. 

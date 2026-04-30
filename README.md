@@ -1,6 +1,6 @@
 # Codex Skills
 
-Personal Codex skills for guarded engineering workflows, organized into a streamlined "Morphic Triad" architecture. These skills are agent-agnostic and focus on intent-based command patterns to minimize context switching and manual routing.
+Personal Codex skills for guarded engineering workflows.
 
 ## Installation
 
@@ -11,47 +11,81 @@ cd $HOME\.codex\skills
 git clone https://github.com/fjdiazt/codex-skills.git .
 ```
 
-## The Core Triad
-
-| Skill | Category | Trigger Keywords | Purpose |
-| --- | --- | --- | --- |
-| `fd-scan` | **Research** | `scan`, `sniff`, `bug`, `review`, `architect` | Read-only investigation, code audits (debt/smells), bug triage, and architectural reviews/pushback. |
-| `fd-proceed` | **Execution** | `fix`, `proceed`, `yolo`, `ship it` | Implementation of changes with variable guardrails, from surgical fixes to hands-off autonomous shipping. |
-| `fd-state` | **Admin** | `note`, `save`, `load`, `update`, `finding` | Session state management, handover notes, durable investigation logs, and brief acknowledgments. |
-
-## Specialized Tools
+## Skills
 
 | Skill | Purpose |
 | --- | --- |
-| `fd-git` | Repository lifecycle operations (e.g., `init`) and project-specific Git workflow macros. |
+| `fd-refine` | Refine mixed business and technical requests, separate requirements from assumptions, and check architecture direction before implementation. |
+| `fd-refine-and-doc` | Refine requests while updating `CONTEXT.md` and ADRs as terminology or decisions crystallize. |
+| `fd-improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
+| `fd-discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
+| `fd-bug` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
+| `fd-sniff` | Read-only smell and technical-debt audit focused on real issues, not nice-to-haves. |
+| `fd-proceed` | Execute an agreed plan or targeted fix while stopping on surprises or ambiguous behavior. |
+| `fd-yolo` | Implement a clear request hands-off with high autonomy until complete or blocked by a safety stop. |
+| `fd-state` | Session state management, handover notes, and durable investigation logs. |
+| `fd-git` | Repository lifecycle operations and project-specific Git workflow macros. |
 
 ## Usage Examples
 
-Each skill automatically shifts its behavior based on the keywords in your prompt.
+### Refinement
 
-### Research (`/fd-scan`)
-- **Discovery**: `/fd-scan "Can you trace the call chain from the LoginController down to the repository? I need to see where the password hash is verified."`
-- **Sniff**: `/fd-scan "Sniff the src/services folder for any logic duplication or brittle error handling. I suspect we're over-abstracting the DB layer."`
-- **Triage**: `/fd-scan "Bug: I'm seeing a 500 error on the /users endpoint when the payload is empty. Can you triage the root cause?"`
-- **Review**: `/fd-scan "Pushback on this plan to add a global singleton for state management. Is this actually necessary or just feature creep?"`
+```text
+/fd-refine "I want this setup flow simplified. The toolbar probably needs a separate refresh path, but don't treat that as a hard requirement."
+```
 
-### Execution (`/fd-proceed`)
-- **Fix**: `/fd-proceed "Fix the NullPointerException in AuthService.ts:142 that occurs when the token is expired."`
-- **Proceed**: `/fd-proceed "Proceed with the agreed plan to migrate the user schema to the new profile-based structure."`
-- **YOLO**: `/fd-proceed "YOLO - just wire up the submit button to the API. Don't worry about the styling or the loading states yet."`
+```text
+/fd-refine-and-doc "Let's clarify this payment retry behavior and record any domain terms or ADR-worthy decisions."
+```
 
-### State & Context (`/fd-state`)
-- **Note**: `/fd-state "Note: the staging database is using a temporary API key that expires in 24 hours."`
-- **Save**: `/fd-state "Save a handover note for the morning shift. I'm stopping midway through the refactor."`
-- **Load**: `/fd-state "Load the context from yesterday's session and summarize what's left to do on the auth migration."`
-- **Finding**: `/fd-state "Finding: the bottleneck in the sync process is actually the JSON deserialization in the worker thread."`
+### Investigation
 
-## Operational Philosophy
+```text
+/fd-discovery "Trace the call chain from the LoginController to the password hash check."
+```
 
-- **Posture Over Task**: Each skill represents a distinct mental "hat" (e.g., Skeptical Owner, Forensic Investigator, Surgical Coder).
-- **Intent Mapping**: Use specific keywords within a skill to shift the agent's internal logic branch without switching the entire instruction set.
-- **Evidence-First**: All findings and actions must be backed by concrete codebase evidence (file paths, line numbers, and documentation).
-- **Read-Only Research**: Research and triage skills (`fd-scan`) are strictly forbidden from editing files to ensure objective analysis.
+```text
+/fd-bug "Bug: /users returns 500 when payload is empty. Triage before fixing."
+```
+
+```text
+/fd-sniff "Sniff src/services for real duplication or brittle error handling."
+```
+
+### Implementation
+
+```text
+/fd-proceed "Proceed with the agreed schema migration plan."
+```
+
+```text
+/fd-proceed "Fix the null token crash in AuthService.ts."
+```
+
+```text
+/fd-yolo "Wire up the submit button to the API and verify it."
+```
+
+## Prompt Macros
+
+Lightweight wording switches and canned acknowledgments live in the Codex prompt macro directory, not in skills:
+
+```text
+C:\Users\Fred\.codex\plugins\commands\
+```
+
+| Macro | Purpose |
+| --- | --- |
+| `caveman`, `caveman-here` | Switch reply style to terse caveman mode with optional intensity arguments. |
+| `note`, `noted` | Acknowledge a note briefly and stop. |
+
+## Design Notes
+
+- Keep skills atomic: one skill, one primary job.
+- Bundle related skills in this repo, but keep active skill folders flat under `C:\Users\Fred\.codex\skills`.
+- Keep prompt-only behavior as macros, not skills.
+- Keep `agents/openai.yaml` as UI metadata; behavior belongs in `SKILL.md`.
+- Use `references/` for optional supporting docs that should load only when needed.
 
 ## Layout
 
@@ -63,7 +97,12 @@ fd-skill-name/
   agents/openai.yaml
 ```
 
-`SKILL.md` contains the trigger metadata and workflow instructions. `agents/openai.yaml` contains the UI-facing display name, short description, and default prompt.
+Optional references live under:
+
+```text
+fd-skill-name/
+  references/
+```
 
 ## Validation
 

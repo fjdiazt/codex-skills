@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD YOLO"
+  short_description: "Implement clear requests until complete"
+  default_prompt: "Use $fd-yolo to implement this request hands-off: figure out implementation details from local evidence, do not ask implementation-choice questions, and keep going until complete unless a safety stop applies."
