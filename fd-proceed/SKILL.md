@@ -18,6 +18,8 @@ Implement changes after the target behavior or plan is clear.
 - **Dirty Worktree**: Warn before overwriting unstaged work.
 - **Logic Failure**: Stop if plan assumptions are wrong or multiple paths emerge.
 - **Style**: Respect active persona (e.g. caveman).
+- **Durable Docs**: Update existing user-facing docs, runbooks, or README only when the change alters documented behavior, commands, setup, architecture decisions, or operational workflow.
+- **Handover**: Do not write handover notes for completed work. If work stops with unresolved state, blockers, partial implementation, or next actions another agent must resume, update `docs/handover.md` using the `fd-state` handover shape.
 
 ## Workflow
 
