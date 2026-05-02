@@ -9,12 +9,13 @@ Implement changes after the target behavior or plan is clear.
 
 ## Modes
 
-1. **Proceed (Default)**: Execute an agreed plan. Stop on surprise or out-of-scope discoveries.
+1. **Proceed (Default)**: Execute an agreed plan by stage or coherent feature group. Stop on surprise, high-risk implementation changes, out-of-scope discoveries, or natural review/commit checkpoints.
 2. **Fix**: Surgical focus on a specific issue. Stop if target behavior is ambiguous or conflicts with repo evidence.
 
 ## Guardrails
 
 - **Confirm**: Verify failure, intended behavior, and likely file list before editing.
+- **Batching**: For multi-stage plans, work by stage or coherent feature group. Do not stop after every small edit or routine validation result. Stop only when there is high risk of changing the intended implementation, clarification is needed, an out-of-scope issue appears, validation exposes a plan-breaking failure, or the user should review/commit a completed stage or feature group.
 - **Dirty Worktree**: Warn before overwriting unstaged work.
 - **Logic Failure**: Stop if plan assumptions are wrong or multiple paths emerge.
 - **Style**: Respect active persona (e.g. caveman).

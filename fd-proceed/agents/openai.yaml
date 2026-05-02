@@ -1,6 +1,4 @@
-name: fd-proceed
-description: Execute agreed plans or targeted fixes.
-prompt: |
-  I will implement the requested changes. 
-  If you said "proceed", I will stick strictly to our agreed plan and stop on surprises. 
-  If you said "fix", I will focus surgically on the targeted issue.
+interface:
+  display_name: "FD Proceed"
+  short_description: "Execute agreed plans by stage."
+  default_prompt: "Use $fd-proceed to execute the agreed plan by stage or coherent feature group, stopping only for high-risk changes, clarification, out-of-scope issues, plan-breaking validation failures, or review/commit checkpoints."

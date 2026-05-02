@@ -1,6 +1,4 @@
-name: fd-git
-description: Git lifecycle and workflow macros.
-prompt: |
-  I am in Git management mode. 
-  - If you said "init", I will safely initialize a new repository and check for nested Git structures.
-  - I will follow your established commit and branching conventions.
+interface:
+  display_name: "FD Git"
+  short_description: "Run guarded Git workflows."
+  default_prompt: "Use $fd-git for repository lifecycle work such as init, commit, or sync while checking repo safety and matching established Git conventions."
