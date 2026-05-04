@@ -18,6 +18,7 @@ git clone https://github.com/fjdiazt/codex-skills.git .
 | `fd-refine` | Refine mixed business and technical requests, separate requirements from assumptions, and check architecture direction before implementation. |
 | `fd-refine-and-doc` | Refine requests while updating `CONTEXT.md` and ADRs as terminology or decisions crystallize. |
 | `fd-improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
+| `fd-zoom-out` | Step back from unfamiliar code and map the relevant modules, callers, and domain vocabulary. |
 | `fd-discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd-triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
 | `fd-code-review` | Review uncommitted local changes before commit or PR for blatant violations, low-hanging defects, likely regressions, and meaningful test gaps. |
@@ -44,6 +45,10 @@ $fd-refine-and-doc "Let's clarify this payment retry behavior and record any dom
 
 ```text
 $fd-discovery "Trace the call chain from the LoginController to the password hash check."
+```
+
+```text
+$fd-zoom-out "I don't know this billing area well. Map the relevant modules and callers before we edit it."
 ```
 
 ```text
@@ -108,6 +113,7 @@ Some skills were adapted from Matt Pocock's public skills repo:
 | `fd-refine` | Adapted from `grill-me`, renamed and reframed around requirements refinement and architecture alignment. |
 | `fd-refine-and-doc` | Adapted from [`grill-with-docs`](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs). |
 | `fd-improve-architecture` | Adapted from [`improve-codebase-architecture`](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture). |
+| `fd-zoom-out` | Adapted from [`zoom-out`](https://github.com/mattpocock/skills/tree/main/skills/engineering/zoom-out). |
 
 ## Layout
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Zoom Out"
+  short_description: "Map codebase context at a higher level"
+  default_prompt: "Use $fd-zoom-out to go up a layer of abstraction, map the relevant modules and callers, and explain how this area fits the bigger picture using the project's domain vocabulary."
