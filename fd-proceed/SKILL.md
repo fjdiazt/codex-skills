@@ -18,6 +18,7 @@ Implement changes after the target behavior or plan is clear.
 - **Batching**: For multi-stage plans, work by stage or coherent feature group. Do not stop after every small edit or routine validation result. Stop only when there is high risk of changing the intended implementation, clarification is needed, an out-of-scope issue appears, validation exposes a plan-breaking failure, or the user should review/commit a completed stage or feature group.
 - **Dirty Worktree**: Warn before overwriting unstaged work.
 - **Logic Failure**: Stop if plan assumptions are wrong or multiple paths emerge.
+- **Architecture Hygiene**: For non-trivial changes, identify the intended module and interface before editing. Keep behavior behind the existing interface when practical. Avoid pass-through helpers, leaking implementation details across module boundaries, and putting policy into adapters or entrypoints. After implementation, do a quick locality check: did the change make the touched module deeper, shallower, or just larger? If real architecture friction remains, fix it within scope or report it as follow-up instead of silently expanding scope.
 - **Style**: Respect active persona (e.g. caveman).
 - **Durable Docs**: Update existing user-facing docs, runbooks, or README only when the change alters documented behavior, commands, setup, architecture decisions, or operational workflow.
 - **Handover**: Do not write handover notes for completed work. If work stops with unresolved state, blockers, partial implementation, or next actions another agent must resume, update `docs/handover.md` using the `fd-state` handover shape.
@@ -36,3 +37,5 @@ Implement changes after the target behavior or plan is clear.
 
 If stopped:
 `Stopped: [Reason]. Need: [Info/Decision].`
+
+
