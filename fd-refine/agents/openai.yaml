@@ -1,4 +1,4 @@
 interface:
   display_name: "FD Refine"
   short_description: "Refine requirements and architecture direction."
-  default_prompt: "Use $fd-refine to refine this request. Separate requirements from technical assumptions, check the architecture direction, ask one question at a time, recommend an answer, and inspect the codebase instead of asking anything the repo can answer."
+  default_prompt: "Use $fd-refine to refine this request. Separate requirements from technical assumptions, check the architecture direction, ask as many material questions as needed, one focused question per turn, and inspect the codebase instead of asking anything the repo can answer."
