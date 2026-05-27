@@ -1,4 +1,4 @@
 interface:
   display_name: "FD Git"
   short_description: "Run guarded Git workflows."
-  default_prompt: "Use $fd-git for repository lifecycle work such as init, commit, or sync while checking repo safety and matching established Git conventions."
+  default_prompt: "Use $fd-git for repository lifecycle work such as init, commit, sync, or project renames while checking repo safety, preserving history, and matching established Git conventions."

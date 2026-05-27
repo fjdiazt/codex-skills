@@ -1,6 +1,6 @@
 ---
 name: fd-yolo
-description: Implement the user's clear request, idea, or instructions directly with minimal ceremony and keep going until the task is complete. Use when Codex is asked to build, change, patch, prototype, wire up, or execute a concrete request and the user wants hands-off implementation. Also use when the user says yolo, just do it, ship it, send it, or similar after Codex has proposed a concrete change; treat that as approval to implement the immediately preceding concrete proposal. Make implementation decisions independently and do not ask implementation-choice questions unless the request is unsafe, impossible, missing required credentials/files, or would require changing the requested behavior or scope.
+description: Use when the user wants hands-off implementation of a clear build, change, patch, prototype, or wiring request, or says "yolo", "just do it", "ship it", or similar.
 ---
 
 # FD YOLO
@@ -40,10 +40,4 @@ Stop and ask before proceeding when:
 - required credentials, files, or environment details are missing
 - verification fails in a way that shows the requested outcome may be unsafe, impossible, or outside scope
 
-## Report Shape
-
-```markdown
-Implemented ...
-
-Verified with ...
-```
+Report concrete result, verification, and remaining blocker or risk.

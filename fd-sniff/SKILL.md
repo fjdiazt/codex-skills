@@ -1,6 +1,6 @@
 ---
 name: fd-sniff
-description: Read-only code smell, architecture smell, and technical debt inspection focused on real issues, not nice-to-haves. Use when Codex is asked to sniff, audit, inspect, or review a codebase area for bad practices, brittle patches, workaround code, architecture drift, duplication, hidden coupling, maintainability risks, or suspicious implementation patterns without editing files. Report concrete findings sorted by severity, with evidence, file references, and suggested remediation direction.
+description: Use when inspecting a codebase area for smells, brittle patches, workaround code, architecture drift, duplication, hidden coupling, or maintainability risk without editing files.
 ---
 
 # FD Sniff
@@ -27,17 +27,4 @@ Inspect for smells. Edit nothing.
 5. Rank only real findings with enough evidence, sorted by severity.
 6. Stop at a useful report; do not expand into a full repo audit unless asked.
 
-## Report Shape
-
-Start with real findings, highest severity first. If there are no real issues, say that clearly.
-
-```markdown
-Findings:
-- High: ...
-  Evidence: `path/file.ext:123`
-  Why it matters: ...
-  Remediation direction: ...
-
-Residual risk:
-- ...
-```
+Report real findings first, highest severity first, with file evidence, impact, remediation direction, and residual risk. If there are no real issues, say so.

@@ -1,6 +1,6 @@
 ---
 name: fd-state
-description: Manage durable session context and findings. Use when the user says "save", "load", "update", or "finding". Brief acknowledgments belong in prompt macros, not this skill.
+description: Use when saving, loading, updating, or recording durable session context, handover notes, or findings in repo docs.
 ---
 
 # FD State
@@ -16,10 +16,9 @@ Manage context and logs.
 
 ## Rules
 
-- **Conciseness**: Bullet points. No filler.
-- **Style**: Match active persona (e.g. caveman).
-- **Log Hygiene**: Durable log entries, not chat transcript.
-- **Edit Discipline**: Preserve anchors/structure. Minimal rewrites.
+- Bullet points. No filler.
+- Durable log entries, not chat transcripts.
+- Preserve anchors and structure; rewrite minimally.
 
 ## Report Shapes
 

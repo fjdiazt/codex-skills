@@ -1,6 +1,6 @@
 ---
 name: fd-triage
-description: Triage a newly observed issue that may or may not be a bug. Use when the user reports suspicious behavior, an error, a regression, unexpected output, failed workflow, or possible defect and wants Codex to investigate before fixing. Gather evidence, ask for logs only when needed, reproduce or trace the issue when possible, check existing tests or regression coverage, classify confidence, and report an initial diagnosis with next recommended action. Do not implement a fix unless explicitly asked.
+description: Use when investigating a reported error, regression, suspicious behavior, failed workflow, unexpected output, or possible defect before fixing.
 ---
 
 # FD Triage
@@ -27,24 +27,4 @@ Triage first. Do not assume it is a bug.
 6. Check whether existing tests cover the behavior and whether a regression test is missing.
 7. Report the initial diagnosis and the next best action.
 
-## Report Shape
-
-```markdown
-Triage: Confirmed bug | Likely bug | Not a bug | Misconfiguration | Environment issue | Unknown
-
-Evidence:
-- ...
-
-Likely cause:
-...
-
-Test coverage:
-- Existing: ...
-- Missing: ...
-
-Need from you:
-- ...
-
-Next action:
-...
-```
+Report classification, evidence, likely cause, test coverage, missing inputs, and next action. Do not implement a fix unless explicitly asked.

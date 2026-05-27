@@ -1,6 +1,8 @@
 ---
 name: fd-zoom-out
-description: Tell Codex to zoom out and give broader codebase context or a higher-level perspective. Use when you are unfamiliar with a section of code or need to understand how it fits into the bigger picture.
+description: Use when the user asks for broader codebase context, a higher-level module map, caller map, or explanation of how an unfamiliar area fits together.
 ---
 
-I don't know this area of code well. Go up a layer of abstraction. Give me a map of all the relevant modules and callers, using the project's domain glossary vocabulary.
+# FD Zoom Out
+
+Go up one layer of abstraction. Map relevant modules, callers, data flow, ownership, and domain vocabulary before drilling into details.

@@ -1,16 +1,15 @@
 ---
 name: fd-refine-and-doc
-description: Refine a mixed business and technical request against project domain language and documented decisions, then update CONTEXT.md and ADRs inline as decisions crystallize. Use when the user wants requirements refinement plus durable docs, technical discovery with glossary/ADR updates, or says "refine and doc".
+description: Use when refining requirements while updating durable project docs, domain glossary terms, CONTEXT.md, ADRs, or documented decisions as they crystallize.
 ---
 
 # FD Refine And Doc
 
 Refine a request before implementation, while keeping project language and architectural decisions documented as they become clear.
 
-Use this when the request mixes business requirements, technical suggestions, domain terminology, and design choices, and the user wants the refined understanding captured in repo docs.
+Use when the request mixes business requirements, technical suggestions, domain terminology, and design choices, and the user wants the refined understanding captured in repo docs.
 
 ## Workflow
-
 1. Identify the business outcome, user need, and decision under discussion.
 2. Separate requirements from implementation hints. Treat technical details as possible context unless clearly stated as requirements.
 3. Read existing domain docs before asking questions:

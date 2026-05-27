@@ -24,6 +24,7 @@ git clone https://github.com/fjdiazt/codex-skills.git .
 | `fd-code-review` | Review uncommitted local changes before commit or PR for blatant violations, low-hanging defects, likely regressions, and meaningful test gaps. |
 | `fd-sniff` | Read-only smell and technical-debt audit focused on real issues, not nice-to-haves. |
 | `fd-trace` | Add and use diagnostic trace logs optimized for Codex/agent debugging and root-cause investigation. |
+| `fd-estimate` | Estimate effort from scope, repository evidence, and git history when available. |
 | `fd-proceed` | Execute an agreed plan or targeted fix while stopping on surprises or ambiguous behavior. |
 | `fd-yolo` | Implement a clear request hands-off with high autonomy until complete or blocked by a safety stop. |
 | `fd-state` | Manage durable session context and findings. |
@@ -65,6 +66,10 @@ $fd-sniff "Sniff src/services for real duplication or brittle error handling."
 
 ```text
 $fd-trace "Add diagnostic trace logs around the setup action flow so Codex can read them back and diagnose the mismatch."
+```
+
+```text
+$fd-estimate "How much effort have we invested in this module, and how long would a similar feature take?"
 ```
 
 ### Implementation

@@ -1,6 +1,6 @@
 ---
 name: fd-trace
-description: Add and use diagnostic trace logs optimized for agent debugging, grepability, state comparison, and root-cause investigation. Use when the user asks for trace logs, diagnostic logs, AI-oriented logs, logs for Codex to read, or logs that help an agent understand what the system is doing. Do not use for developer-readable or user-facing log copy unless the user asks for that format.
+description: Use when adding or reading diagnostic trace logs for root-cause investigation, agent-readable debugging, state comparison, grepability, or runtime path reconstruction.
 ---
 
 # FD Trace
@@ -46,23 +46,7 @@ Prefer this shape, adapted to the local language and logger:
 event=<scope.action.phase> key=value key=value result=value
 ```
 
-Good trace fields:
-
-- `event`
-- `component`
-- `operation`
-- `phase`
-- `id`
-- `path`
-- `input`
-- `previous`
-- `next`
-- `decision`
-- `reason`
-- `result`
-- `error_code`
-- `error_message`
-- `elapsed_ms`
+Good fields: `event`, `component`, `operation`, `phase`, `id`, `path`, `input`, `previous`, `next`, `decision`, `reason`, `result`, `error_code`, `error_message`, `elapsed_ms`.
 
 ## Example
 
@@ -83,18 +67,4 @@ When reading trace logs:
 4. Look for missing links in the chain before adding more logs.
 5. Prefer one focused follow-up trace over broad logging noise.
 
-## Report Shape
-
-```markdown
-FD Trace: Added diagnostic trace logs around [path/behavior].
-
-Trace points:
-- event=...
-- event=...
-
-Verified:
-- ...
-
-Readback:
-- ...
-```
+Report trace points, verification, and readback findings.

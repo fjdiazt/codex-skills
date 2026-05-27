@@ -1,19 +1,19 @@
 ---
 name: fd-code-review
-description: Read-only review of uncommitted local code changes before commit or PR. Use when Codex is asked to review, PR-review, self-review, inspect, or audit unstaged/staged changes, a working tree diff, or a pending commit for blatant violations, low-hanging defects, likely regressions, security risks, unsafe behavior changes, or meaningful missing tests. Avoid nice-to-haves, speculative improvements, and forced findings. Report findings first with file/line evidence; do not edit files.
+description: Use when reviewing uncommitted changes, staged diffs, working tree diffs, or pending commits for concrete defects, regressions, security risks, unsafe behavior, or missing tests without editing files.
 ---
 
 # FD Code Review
 
-Review uncommitted code like a senior reviewer preparing a PR. Edit nothing. The primary job is to catch obvious defects and policy violations, then protect against likely regressions. Do not manufacture findings to satisfy the review format.
+Review uncommitted code like a senior PR reviewer. Edit nothing. Catch obvious defects, policy violations, and likely regressions. Do not manufacture findings.
 
 ## Rules
 
 - Do not modify files.
 - Do not run formatters, generators, migrations, cleanup scripts, or commands that write outputs.
-- Review the actual diff first: staged, unstaged, untracked, and renamed files.
-- Include repo guidance before judging: `AGENTS.md`, `README*`, docs, architecture notes, ADRs, findings, roadmap, and local test instructions.
-- Prioritize blatant violations, low-hanging defects, correctness, behavior, security, data loss, concurrency, API contracts, compatibility, regression risks, and meaningful test gaps.
+- Review actual staged, unstaged, untracked, and renamed files first.
+- Read repo guidance before judging: `AGENTS.md`, `README*`, docs, ADRs, findings, roadmap, local test instructions.
+- Prioritize correctness, behavior, security, data loss, concurrency, API contracts, compatibility, regression risks, and meaningful test gaps.
 - Treat style comments as non-blocking unless they create real risk or violate explicit project rules.
 - Skip nice-to-haves, "could have been cleaner" comments, speculative redesigns, and alternate implementations unless the current diff creates concrete risk.
 - Distinguish changed-code issues from pre-existing surrounding debt.
@@ -22,56 +22,28 @@ Review uncommitted code like a senior reviewer preparing a PR. Edit nothing. The
 
 ## Workflow
 
-1. Capture change scope:
-   - `git status --short`
-   - `git diff --stat`
-   - `git diff --name-status`
-   - `git diff --cached --stat` and `git diff --cached --name-status` when staged changes exist.
+1. Capture scope with `git status --short`, diff stats/name-status, and staged equivalents when needed.
 2. Inspect repo guidance and relevant docs before reviewing patterns or tests.
-3. Read diffs by risk:
-   - public API, persistence, auth/security, concurrency, file/network IO, build/release config, generated-code pipeline, shared helpers
-   - main implementation files
-   - tests
-   - docs and metadata
-4. For each changed file, inspect enough surrounding code to understand contracts, ownership, invariants, and existing style.
+3. Read risky diffs first: public API, persistence, auth/security, concurrency, IO, build/release config, generated-code pipelines, shared helpers, then main code/tests/docs.
+4. Inspect enough surrounding code to understand contracts, ownership, invariants, and style.
 5. Check review dimensions:
-   - intent: change makes sense for stated goal and is not mixed with unrelated refactor
-   - behavior: edge cases, null/empty/error paths, state transitions, rollback paths, compatibility
-   - regression: changed contracts, default behavior, migrations, persistence shape, external integrations, build/release config, and compatibility assumptions
-   - design: source of truth, layering, ownership, hidden globals, over-abstraction, speculative generality, and SOLID fit only when they create concrete risk in this diff
-   - code smells: duplication, long functions/classes/files, complex conditionals, temporal coupling, shotgun surgery, workaround state, and dead code only when they are new or materially worsened by the diff
-   - tests: meaningful assertions, failure mode coverage, regression coverage, brittle mocks, and missing service/repository coverage for risky changed behavior
-   - operational risk: logging, observability, performance, resource cleanup, migrations, deployment/build changes
-   - review hygiene: accidental debug logs, secrets, unrelated churn, generated files edited instead of generators
-6. If a changed file is unusually long or grew materially, call out only when size creates concrete review or maintenance risk. Prefer measured evidence such as line count and changed-region complexity.
-7. If no concrete issue survives the evidence threshold, report no findings. Mention residual validation gaps rather than stretching weak concerns into findings.
-8. Run read-only commands freely. Run build/tests only when the user asked or repo guidance clearly expects validation for review; report commands and results separately from findings.
+   - intent, unrelated refactors, and scope creep
+   - edge cases, state transitions, rollback paths, compatibility, contracts
+   - security, data loss, concurrency, persistence, integrations, build/release risk
+   - source of truth, ownership, layering, hidden globals, over-abstraction, SOLID/design issues with concrete diff risk
+   - new/worsened smells: duplication, long units, complex conditionals, temporal coupling, shotgun surgery, workaround state, dead code
+   - tests: assertions, failure modes, regression coverage, brittle mocks, risky gaps
+   - operational hygiene: logging, observability, performance, cleanup, migrations, debug logs, secrets, unrelated churn, generated files edited instead of generators
+6. Call out file size/growth only when it creates concrete risk; prefer measured evidence.
+7. If no concrete issue survives, report no findings and residual validation gaps.
+8. Run build/tests only when asked or repo guidance expects it; separate validation from findings.
 
 ## Optional Reference
 
 Load `references/review-heuristics.md` when the review needs a fuller checklist, when reviewing broad diffs, or when calibrating what should count as worth reporting.
 
-## Report Shape
+## Report
 
-Lead with findings. Sort by severity. If no issues, say so and mention residual test/validation gaps.
+Lead with findings by severity. If none, say so and mention residual test/validation gaps. Include file/line evidence, impact, remediation direction, open questions, and validation.
 
-```markdown
-Findings:
-- High: ...
-  Evidence: `path/file.ext:123`
-  Why it matters: ...
-  Remediation direction: ...
-
-Open questions:
-- ...
-
-Validation:
-- Not run: review was read-only.
-```
-
-Severity guide:
-
-- `Critical`: likely data loss, security vulnerability, broken build/release, or severe production regression.
-- `High`: likely user-visible defect, contract break, missing required migration, unsafe state handling, or important regression gap.
-- `Medium`: maintainability or correctness risk likely to become a defect, including meaningful SOLID/design violations.
-- `Low`: minor risk worth fixing but not merge-blocking.
+Severity: `Critical` for likely data loss/security/broken release/severe regression; `High` for likely user-visible defect/contract break/unsafe state/important regression gap; `Medium` for likely maintainability or correctness risk; `Low` for minor non-blocking risk.
