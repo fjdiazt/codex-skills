@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub"
+  short_description: "Manage GitHub issues and project workflow."
+  default_prompt: "Use $fd:github to create, triage, and update GitHub issues with correct repository, project, status, ordering, and custom fields."

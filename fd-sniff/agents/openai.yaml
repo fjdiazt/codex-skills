@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Sniff"
-  short_description: "Find code smells without editing"
-  default_prompt: "Use $fd-sniff to inspect this codebase area read-only for real code smells, architecture drift, workaround patches, and technical debt; report only evidence-backed issues sorted by severity, with remediation direction."

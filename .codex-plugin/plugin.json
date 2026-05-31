@@ -1,0 +1,25 @@
+{
+  "name": "fd",
+  "version": "0.1.0+codex.20260531062745",
+  "description": "Fred's guarded engineering workflow skills.",
+  "author": {
+    "name": "Fred"
+  },
+  "repository": "https://github.com/fjdiazt/codex-skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "FD",
+    "shortDescription": "Guarded engineering workflow skills.",
+    "longDescription": "FD bundles concise Codex skills for refinement, discovery, triage, code review, tracing, git workflow, and fast implementation loops.",
+    "developerName": "Fred",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Use fd:discovery to inspect this repo.",
+      "Use fd:triage to investigate this issue.",
+      "Use fd:proceed to apply the agreed fix."
+    ]
+  }
+}

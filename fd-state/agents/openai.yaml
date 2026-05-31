@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD State"
-  short_description: "Manage handover and findings."
-  default_prompt: "Use $fd-state to save, update, or load handover context, or to record a durable finding in the repository notes."

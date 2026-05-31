@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rapid Fire"
+  short_description: "Fast lightweight iteration"
+  default_prompt: "Use $fd:rapid-fire to make back-to-back changes with lightweight verification only, deferring full tests, diff audits, and commits until wrap-up."

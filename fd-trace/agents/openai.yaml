@@ -1,4 +1,0 @@
-interface:
-  display_name: "FD Trace"
-  short_description: "Gated diagnostic traces"
-  default_prompt: "Use $fd-trace to add diagnostic trace logs that are agent-readable, gated by log level or build mode, and kept out of user-facing output."
