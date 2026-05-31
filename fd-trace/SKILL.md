@@ -1,6 +1,6 @@
 ---
 name: fd-trace
-description: Use when adding or reading diagnostic trace logs for root-cause investigation, agent-readable debugging, state comparison, grepability, or runtime path reconstruction.
+description: Use when adding or reading diagnostic trace logs for root-cause investigation, agent-readable debugging, state comparison, grepability, runtime path reconstruction, preventing debug output from leaking into user-facing messages, or gating logs behind release/build flags and log levels.
 ---
 
 # FD Trace
@@ -14,6 +14,11 @@ Trace logs are for diagnosis, not presentation. They should make runtime behavio
 ## Rules
 
 - Prefer existing logging and tracing APIs in the repo.
+- Keep diagnostic, agent-facing, developer-facing, or non-user-facing messages behind trace/log output. Do not place them in UI strings, API responses, CLI normal output, customer-visible errors, release notes, toast text, or other user-facing surfaces.
+- Never let trace/debug output leak when release mode, production mode, or an equivalent release flag/build flag is active.
+- If the repo has centralized log levels, feature flags, trace channels, or build-mode helpers, use them instead of adding one-off conditionals.
+- If the repo does not have a centralized, reusable way to gate logs by level/mode, pause the first time and ask whether to implement a small helper for standard levels such as error, warn, info, debug, and trace.
+- Do not silently invent a new logging policy, global setting, environment variable, or public output channel.
 - Keep event names stable, grep-friendly, and scoped, for example `setup.action.apply.start`.
 - Use structured fields or `key=value` text when native structured logging is unavailable.
 - Log branch decisions, inputs that affect behavior, important state snapshots, before/after values, returned status, and caught error details.
@@ -27,16 +32,46 @@ Trace logs are for diagnosis, not presentation. They should make runtime behavio
 ## Workflow
 
 1. Identify the behavior to diagnose and the smallest runtime path that can explain it.
-2. Find existing log style, trace IDs, debug flags, and safe redaction conventions.
-3. Add a short trace chain around the causal path:
+2. Find existing log style, trace IDs, debug flags, build/release flags, log-level helpers, and safe redaction conventions.
+3. Check output surface:
+   - user-facing output: do not add diagnostic text there
+   - developer/agent trace output: allowed only through gated logger/trace API
+   - missing reusable gate: pause and ask before adding helper or ad hoc logs
+4. Add a short trace chain around the causal path:
    - entry/start
    - important branch decisions
    - external calls or state mutations
    - result/end
    - error/exception path
-4. Use stable event names and consistent field names across the chain.
-5. Run the cheapest verification that produces or compiles the logs.
-6. If logs were produced, read them back and report what they prove or what is still missing.
+5. Use stable event names and consistent field names across the chain.
+6. Run the cheapest verification that proves release/production output stays clean when practical.
+7. If logs were produced, read them back and report what they prove or what is still missing.
+
+## Output Gates
+
+| Surface | Allowed |
+|---|---|
+| User-facing UI/API/CLI normal output | No diagnostic trace text |
+| Debug/dev console | Only through existing gated logger |
+| Files or trace sink | Only when gated by log level, trace flag, or debug build |
+| Release/production mode | Errors only when intentionally user-appropriate; no debug/trace chatter |
+
+When adding a helper after user approval, keep it small and repo-native:
+
+```text
+trace.debug(event, fields)   # hidden in release/production
+trace.info(event, fields)    # only if existing policy allows info logs
+trace.warn(event, fields)    # non-secret operational warning
+trace.error(event, fields)   # safe error code/message, no private payloads
+```
+
+Use build flags, runtime config, or environment gates that already exist. If none exist, make the smallest helper that centralizes:
+
+- level threshold
+- release/production suppression
+- structured event fields
+- redaction
+- one trace sink
 
 ## Event Shape
 

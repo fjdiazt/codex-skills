@@ -1,4 +1,4 @@
 interface:
   display_name: "FD Trace"
-  short_description: "Agent-oriented diagnostic traces"
-  default_prompt: "Use $fd-trace to add diagnostic trace logs optimized for Codex to read back, then use the resulting trace to narrow the root cause."
+  short_description: "Gated diagnostic traces"
+  default_prompt: "Use $fd-trace to add diagnostic trace logs that are agent-readable, gated by log level or build mode, and kept out of user-facing output."
