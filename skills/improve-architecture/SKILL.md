@@ -38,9 +38,22 @@ Principles:
 7. Consider existing project patterns, SOLID principles, or named patterns only when they clarify a candidate.
 8. Present a numbered list of deepening opportunities.
 
-For each candidate: **Status** (`open`, `grilling`, `ready`, `rejected`, `deferred`, `done`), **Files**, **Problem**, **Solution**, **Benefits** for locality/leverage/tests.
+For each candidate: **Status** (`open`, `grilling`, `ready`, `rejected`, `deferred`, `done`), **Strength** (`strong`, `worth exploring`, `speculative`), **Files**, **Problem**, **Solution**, **Benefits** for locality/leverage/tests.
 
 Use project domain vocabulary and `references/LANGUAGE.md`. Surface ADR conflicts only when friction may justify reopening the decision. Do not propose final interfaces in the first pass. End by asking whether to refine one candidate, proceed, or add another angle.
+
+## Optional HTML Report
+
+Default to the numbered list. Offer an HTML report only when the architecture review has enough
+complexity that visual before/after diagrams would materially improve the user's decision:
+
+- three or more candidates with cross-cutting dependencies
+- call flow, ownership, or deployment shape is difficult to explain in text
+- the user needs to compare candidates with different dependency categories or rollout risk
+- the user explicitly asks for a visual/report artifact
+
+If offering the report, ask before creating it. If the user accepts, write a self-contained HTML file
+to the OS temp directory, not the repo, and use `references/HTML-REPORT.md`.
 
 ## Candidate Continuity
 
@@ -63,3 +76,4 @@ When decisions crystallize:
 - `references/LANGUAGE.md`: required vocabulary and principles.
 - `references/DEEPENING.md`: dependency categories and testing strategy for deepening work.
 - `references/INTERFACE-DESIGN.md`: process for comparing alternative interfaces.
+- `references/HTML-REPORT.md`: optional visual report format for complex candidate sets.

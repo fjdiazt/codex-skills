@@ -1,5 +1,10 @@
 # ADR Format
 
+An ADR is an Architecture Decision Record: a short durable note explaining a significant technical
+or architectural decision, the context that made it necessary, and why this path was chosen over
+real alternatives. ADRs help future reviews avoid re-litigating decisions whose reasons are not
+obvious from code alone.
+
 ADRs live in `docs/adr/` by default and use sequential numbering:
 
 ```text
@@ -43,10 +48,18 @@ Skip the ADR if the decision is easy to reverse, unsurprising, or obvious.
 
 ## What Qualifies
 
-- Architectural shape.
-- Integration patterns between contexts.
-- Technology choices that carry real lock-in.
-- Seam and scope decisions.
-- Deliberate deviations from the obvious path.
-- Constraints not visible in code.
-- Rejected alternatives when the rejection is non-obvious.
+- Architectural shape: monorepo vs split repos, event-sourced write model plus projected read model,
+  or a deliberate module/seam layout.
+- Integration patterns between contexts: domain events instead of synchronous HTTP, shared IDs only,
+  or one context owning data that others reference.
+- Technology choices that carry real lock-in: database, message bus, auth provider, deployment
+  target, or another choice that would take meaningful work to replace.
+- Seam and scope decisions: customer data owned by one context, other contexts reference it by ID
+  only, or a chosen interface that deliberately hides internal adapters.
+- Deliberate deviations from the obvious path: manual SQL instead of an ORM, no caching despite
+  repeated reads, or a synchronous path where async would normally be expected.
+- Constraints not visible in code: compliance limits, partner latency contracts, deployment
+  restrictions, licensing, or operational constraints.
+- Rejected alternatives when the rejection is non-obvious: REST over GraphQL for a specific contract
+  reason, Postgres over a document database for transaction guarantees, or declining a refactor
+  because an ADR-protected ownership rule matters more.

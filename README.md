@@ -128,7 +128,9 @@ C:\Users\Fred\.codex\plugins\commands\
 
 ## Upstream Sources
 
-Some skills were adapted from Matt Pocock's public skills repo:
+Some skills were adapted from Matt Pocock's public skills repo. These are not 1:1 mirrors; each one
+has been reshaped for the FD plugin workflow, Windows/local-repo usage, and Codex behavior. When
+reviewing upstream changes, compare intent and workflow fit before porting new guidance.
 
 | Local skill | Upstream source |
 | --- | --- |
