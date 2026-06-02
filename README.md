@@ -26,11 +26,13 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | Skill | Purpose |
 | --- | --- |
 | `fd:refine` | Refine mixed business and technical requests, separate requirements from assumptions, and check architecture direction before implementation. |
+| `fd:init` | Initialize repo-local FD workflow context such as GitHub projects, statuses, custom fields, and domain docs. |
 | `fd:refine-and-doc` | Refine requests while updating `CONTEXT.md` and ADRs as terminology or decisions crystallize. |
 | `fd:improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
 | `fd:zoom-out` | Step back from unfamiliar code and map the relevant modules, callers, and domain vocabulary. |
 | `fd:discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
+| `fd:diagnose` | Root-cause confirmed hard bugs, flaky bugs, and performance regressions with a reproducible feedback loop. |
 | `fd:code-review` | Review uncommitted local changes before commit or PR for concrete defects, likely regressions, and meaningful test gaps. |
 | `fd:sniff` | Read-only smell and technical-debt audit focused on real issues, not nice-to-haves. |
 | `fd:trace` | Add and use diagnostic trace logs optimized for Codex/agent debugging and root-cause investigation. |
@@ -45,6 +47,10 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 ## Usage Examples
 
 ### Refinement
+
+```text
+$fd:init "Set up FD workflow context for this repo."
+```
 
 ```text
 $fd:refine "I want this setup flow simplified. The toolbar probably needs a separate refresh path, but don't treat that as a hard requirement."
@@ -66,6 +72,10 @@ $fd:zoom-out "I don't know this billing area well. Map the relevant modules and 
 
 ```text
 $fd:triage "Bug: /users returns 500 when payload is empty. Triage before fixing."
+```
+
+```text
+$fd:diagnose "Root-cause this flaky export failure and add a regression test."
 ```
 
 ```text
@@ -138,6 +148,7 @@ reviewing upstream changes, compare intent and workflow fit before porting new g
 | `fd:refine-and-doc` | Adapted from [`grill-with-docs`](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs). |
 | `fd:improve-architecture` | Adapted from [`improve-codebase-architecture`](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture). |
 | `fd:zoom-out` | Adapted from [`zoom-out`](https://github.com/mattpocock/skills/tree/main/skills/engineering/zoom-out). |
+| `fd:diagnose` | Adapted from [`diagnose`](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnose), scoped to run after FD triage and to use `fd:trace` for instrumentation. |
 
 `fd:code-review` is not listed as an adaptation. Matt Pocock's repo has an in-progress
 [`review`](https://github.com/mattpocock/skills/tree/main/skills/in-progress/review) skill, but it

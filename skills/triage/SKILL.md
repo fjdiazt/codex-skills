@@ -16,6 +16,7 @@ Triage first. Do not assume it is a bug.
 - Check whether a test already covers the behavior before recommending a regression test.
 - Distinguish bug, expected behavior, misconfiguration, stale build/output, environment issue, missing requirement, and unknown.
 - Stop at triage unless the user asks to fix.
+- If triage confirms a hard, flaky, or performance defect and the user wants to continue, hand off to `fd:diagnose`.
 
 ## Workflow
 

@@ -24,6 +24,9 @@ Trace logs are for diagnosis, not presentation. They should make runtime behavio
 - Log branch decisions, inputs that affect behavior, important state snapshots, before/after values, returned status, and caught error details.
 - Include correlation fields when available: request ID, trace ID, operation ID, node/item ID, file path, user-visible action, or subsystem.
 - Keep values flat and explicit. Avoid nested dumps unless the repo already has safe structured logging for them.
+- Tie temporary instrumentation to a specific hypothesis or prediction from the diagnosis loop. Do not add broad "log everything" probes.
+- For temporary probes that should not survive, add a unique cleanup prefix such as `[DEBUG-a4f2]`, then grep for and remove it before completion.
+- For performance regressions, prefer baseline measurements, profilers, query plans, or bisection before trace logs.
 - Avoid vague prose such as "doing setup", "state looks weird", or "handled error".
 - Avoid human-oriented narrative, apologies, explanations, or AI-style summaries inside logs.
 - Do not log secrets, tokens, credentials, private content, or large payloads. Redact or summarize sensitive values.
@@ -37,15 +40,16 @@ Trace logs are for diagnosis, not presentation. They should make runtime behavio
    - user-facing output: do not add diagnostic text there
    - developer/agent trace output: allowed only through gated logger/trace API
    - missing reusable gate: pause and ask before adding helper or ad hoc logs
-4. Add a short trace chain around the causal path:
+4. If the trace is part of diagnosis, state the hypothesis prediction the trace will test.
+5. Add a short trace chain around the causal path:
    - entry/start
    - important branch decisions
    - external calls or state mutations
    - result/end
    - error/exception path
-5. Use stable event names and consistent field names across the chain.
-6. Run the cheapest verification that proves release/production output stays clean when practical.
-7. If logs were produced, read them back and report what they prove or what is still missing.
+6. Use stable event names and consistent field names across the chain.
+7. Run the cheapest verification that proves release/production output stays clean when practical.
+8. If logs were produced, read them back and report what they prove or what is still missing.
 
 ## Output Gates
 

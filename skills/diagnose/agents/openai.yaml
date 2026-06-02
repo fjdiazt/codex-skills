@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnose"
+  short_description: "Root-cause hard bugs and regressions"
+  default_prompt: "Use $fd:diagnose to build a feedback loop, reproduce, minimise, rank hypotheses, instrument, fix, regression-test, and clean up this hard bug or performance regression."
