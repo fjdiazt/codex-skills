@@ -132,10 +132,16 @@ Some skills were adapted from Matt Pocock's public skills repo:
 
 | Local skill | Upstream source |
 | --- | --- |
-| `fd:refine` | Adapted from `grill-me`, renamed and reframed around requirements refinement and architecture alignment. |
+| `fd:refine` | Adapted from [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me), renamed and reframed around requirements refinement and architecture alignment. |
 | `fd:refine-and-doc` | Adapted from [`grill-with-docs`](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs). |
 | `fd:improve-architecture` | Adapted from [`improve-codebase-architecture`](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture). |
 | `fd:zoom-out` | Adapted from [`zoom-out`](https://github.com/mattpocock/skills/tree/main/skills/engineering/zoom-out). |
+
+`fd:code-review` is not listed as an adaptation. Matt Pocock's repo has an in-progress
+[`review`](https://github.com/mattpocock/skills/tree/main/skills/in-progress/review) skill, but it
+uses a fixed-point diff with separate Standards and Spec review axes. This plugin's `fd:code-review`
+is a local review workflow for staged, unstaged, untracked, and pending commit changes, focused on
+defects, regressions, security risks, unsafe behavior, and meaningful test gaps.
 
 ## Layout
 
