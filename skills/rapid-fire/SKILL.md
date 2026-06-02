@@ -1,6 +1,6 @@
 ---
 name: rapid-fire
-description: Use when the user wants back-to-back code or content changes with lightweight verification only, says "rapid fire", "quick iteration", "no heavy testing", "skip heavy checks", or asks to defer commits until "wrap it up" or "commit".
+description: Use when the user wants back-to-back code or content changes with lightweight verification only, says "rapid fire", "quick iteration", "no heavy testing", "skip heavy checks", asks to defer commits until "wrap it up" or "commit", or requests rapid-fire testing/TDD with phrases like "rapid-fire testing" or "rapid-fire tdd".
 ---
 
 # FD Rapid Fire
@@ -18,6 +18,32 @@ Default stance:
 - run only cheap verification when useful
 - do not commit, push, or prepare PRs
 - defer cleanup, broad checks, and diff review until the user says `wrap it up`, `commit`, or asks for a review
+
+## Testing Modes
+
+Plain `rapid-fire` keeps testing lightweight and opportunistic.
+
+`rapid-fire testing` means run a focused check after each relevant change when a cheap one exists:
+
+- touched-file unit test
+- narrow smoke test
+- single target compile
+- small repro script
+- focused lint/typecheck for the edited area
+
+`rapid-fire tdd` means write or update the smallest focused test first when practical:
+
+1. Add the focused test or repro.
+2. Watch it fail, or explain why failure proof is impractical.
+3. Patch the behavior.
+4. Run the focused test.
+
+Still defer broad suites, full integration workflows, release builds, diff audits, commits, and pushes
+until wrap-up unless the user explicitly asks for them.
+
+If a requested bug fix needs a real reproduction loop, ranked hypotheses, or regression coverage
+outside cheap rapid iteration, switch to `fd:diagnose` unless the user explicitly keeps it in
+rapid-fire mode.
 
 ## Allowed Verification
 
@@ -48,10 +74,11 @@ Do not do these during rapid-fire iteration unless the user explicitly asks:
 ## Workflow
 
 1. Read only the files needed for the next change.
-2. Patch the requested behavior using existing local patterns.
-3. Run a cheap targeted check only if it is likely to catch immediate mistakes.
-4. Report the changed behavior and any skipped verification in one short update.
-5. Keep going on the next user request without asking for a plan.
+2. If in `rapid-fire tdd`, add or update the smallest focused test first when practical.
+3. Patch the requested behavior using existing local patterns.
+4. Run a cheap targeted check only if it is likely to catch immediate mistakes, or when `rapid-fire testing` / `rapid-fire tdd` requested it.
+5. Report the changed behavior and any skipped verification in one short update.
+6. Keep going on the next user request without asking for a plan.
 
 ## Wrap-Up Trigger
 
