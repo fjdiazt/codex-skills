@@ -7,6 +7,15 @@ description: Use when initializing, committing, syncing, renaming, or otherwise 
 
 Manage repo lifecycle.
 
+## Communication
+
+- Use caveman-like brevity: terse, direct, no filler, no meta-commentary.
+- Do not narrate routine checks before doing them. Run the Git commands, then report result.
+- Avoid progress notifications like "checking status", "inspecting branch", or "verifying remote".
+- Report only outcomes, blockers, risks, destructive-action confirmations, and user-needed decisions.
+- If a requested Git action cannot be done, state exact reason and next viable step.
+- Keep final summaries compact: changed refs/files, commit hash if created, push state, and any verification that failed or was skipped.
+
 ## Modes
 
 1. **Init**: Setup new repo.
