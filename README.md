@@ -43,6 +43,8 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:git` | Repository lifecycle operations and project-specific Git workflow macros. |
 | `fd:github` | GitHub issue and project workflows for Fred's repositories. |
 | `fd:rapid-fire` | Back-to-back lightweight changes with narrow verification. |
+| `fd:prototype` | Build tiny functional local app POCs for approval without full materialization. |
+| `fd:mockup` | Create HTML visual options, diagrams, and comparisons without changing app source by default. |
 
 ## Usage Examples
 
@@ -110,6 +112,14 @@ $fd:yolo "Wire up the submit button to the API and verify it."
 
 ```text
 $fd:rapid-fire "Make these small copy tweaks quickly; skip heavy checks until wrap-up."
+```
+
+```text
+$fd:prototype "Build just enough of this toolbar behavior in the app so I can approve the interaction."
+```
+
+```text
+$fd:mockup "Show me three HTML options for this mobile lightbox toolbar."
 ```
 
 ## Prompt Macros

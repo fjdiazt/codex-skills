@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Tiny app POCs for approval"
+  default_prompt: "Use $fd:prototype to build the smallest functional local app prototype needed to answer one approval question, without polishing, broad refactors, commits, or production-impacting changes unless explicitly requested."

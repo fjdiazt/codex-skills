@@ -10,7 +10,7 @@
   "interface": {
     "displayName": "FD",
     "shortDescription": "Guarded engineering workflow skills.",
-    "longDescription": "FD bundles concise Codex skills for repo workflow initialization, refinement, discovery, triage, diagnosis, code review, tracing, git workflow, and fast implementation loops.",
+    "longDescription": "FD bundles concise Codex skills for repo workflow initialization, refinement, discovery, triage, diagnosis, code review, tracing, git workflow, fast implementation loops, app prototypes, and visual mockups.",
     "developerName": "Fred",
     "category": "Productivity",
     "capabilities": [
