@@ -30,6 +30,7 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:refine-and-doc` | Refine requests while updating `CONTEXT.md` and ADRs as terminology or decisions crystallize. |
 | `fd:improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
 | `fd:zoom-out` | Step back from unfamiliar code and map the relevant modules, callers, and domain vocabulary. |
+| `fd:question` | Treat a request as just a question, with no implementation or changes. |
 | `fd:discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
 | `fd:diagnose` | Root-cause confirmed hard bugs, flaky bugs, and performance regressions with a reproducible feedback loop. |
@@ -63,6 +64,10 @@ $fd:refine-and-doc "Let's clarify this payment retry behavior and record any dom
 ```
 
 ### Investigation
+
+```text
+$fd:question "This is just a question, don't implement or change anything."
+```
 
 ```text
 $fd:discovery "Trace the call chain from the LoginController to the password hash check."
