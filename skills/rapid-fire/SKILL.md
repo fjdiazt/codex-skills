@@ -1,6 +1,6 @@
 ---
 name: rapid-fire
-description: Use when the user wants back-to-back code or content changes with lightweight verification only, says "rapid fire", "quick iteration", "no heavy testing", "skip heavy checks", asks to defer commits until "wrap it up" or "commit", or requests rapid-fire testing/TDD with phrases like "rapid-fire testing" or "rapid-fire tdd".
+description: Use for back-to-back code/content changes with lightweight verification only. Triggers include rapid fire, quick iteration, no heavy testing, skip heavy checks, defer commits until wrap it up/commit, rapid-fire testing, or rapid-fire tdd.
 ---
 
 # FD Rapid Fire

@@ -1,6 +1,6 @@
 ---
 name: trace
-description: Use when adding or reading diagnostic trace logs for root-cause investigation, agent-readable debugging, state comparison, grepability, runtime path reconstruction, preventing debug output from leaking into user-facing messages, or gating logs behind release/build flags and log levels.
+description: Use to add or read diagnostic trace logs for root-cause work, including agent-readable state/branch/runtime reconstruction, grepable events, clean user-facing output, and release/build/log-level gates.
 ---
 
 # FD Trace

@@ -1,6 +1,6 @@
 ---
 name: diagnose
-description: Use when debugging or root-causing confirmed, hard, flaky, or performance bugs after triage, or when the user says diagnose, debug, root cause, reproduce, flaky, regression, or performance regression. Builds a feedback loop, reproduces and minimises the failure, ranks falsifiable hypotheses, instruments narrowly, fixes, regression-tests, and cleans up.
+description: Use for confirmed hard, flaky, or performance bugs after triage, or when user says diagnose/debug/root cause/reproduce/regression. Builds a feedback loop, minimises failure, ranks falsifiable hypotheses, instruments narrowly, fixes, regression-tests, and cleans up.
 ---
 
 # FD Diagnose

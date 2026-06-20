@@ -1,6 +1,6 @@
 ---
 name: github
-description: Use when creating, triaging, planning, or updating GitHub issues and GitHub Projects, especially when a request mentions issues, project assignment, repository assignment, project status, labels, milestones, assignees, custom fields, or issue breakdowns.
+description: Use for GitHub issues/projects to create, triage, plan, update, assign repo/project/status/labels/milestones/assignees/custom fields, or break down issues.
 ---
 
 # FD GitHub

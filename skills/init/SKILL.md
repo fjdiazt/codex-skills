@@ -1,6 +1,6 @@
 ---
 name: init
-description: Use when initializing FD workflow context for a repository, especially GitHub issue/project defaults, project status names, custom fields, issue tracker conventions, domain docs layout, or an AGENTS.md/CLAUDE.md FD workflow block. Sets up repo-local guidance so other fd skills do not rely on hard-coded defaults.
+description: Use to initialize repo-local FD workflow context, including GitHub issue/project defaults, statuses, custom fields, issue conventions, domain docs, concurrent-agent safety, or AGENTS.md/CLAUDE.md workflow guidance.
 ---
 
 # FD Init

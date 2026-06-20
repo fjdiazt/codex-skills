@@ -1,6 +1,6 @@
 ---
 name: mockup
-description: Use when the user wants multiple visual options, HTML mockups, diagrams, architecture visuals, layout comparisons, or a visual companion artifact that may be served locally or saved as temporary HTML.
+description: Use for visual options, HTML mockups, diagrams, architecture visuals, layout comparisons, or temporary visual review artifacts.
 ---
 
 # FD Mockup
