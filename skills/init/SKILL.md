@@ -11,7 +11,8 @@ Initialize repo-local FD workflow context. Do not assume global GitHub or projec
 
 Create or update repo-local agent workflow guidance that agent skills can read before acting. The
 guidance should capture only conventions that affect behavior: issue tracker, GitHub project
-metadata, status flow, custom fields, domain docs, and any repo-specific workflow stops.
+metadata, status flow, custom fields, domain docs, concurrent-agent safety, and any repo-specific
+workflow stops.
 
 ## Files
 
@@ -21,6 +22,18 @@ If `AGENTS.md` does not exist but `CLAUDE.md` exists, update `CLAUDE.md`. If nei
 before creating one. Use `docs/agents/agent-profile.md` only when the workflow guidance is too long
 for a compact root block or the user explicitly wants a separate shared profile.
 
+## Idempotency
+
+Treat reruns as audits and refreshes.
+
+- Do not duplicate `## Agent workflow`, subsection headings, or bullets.
+- If `## Agent workflow` exists, merge missing or stale subsections into it.
+- Preserve unrelated guidance, comments, formatting, and user-written sections.
+- If requested guidance is already present, make no file changes and report the existing path.
+- When adding safety rules, detect equivalent wording instead of inserting duplicate bullets.
+- Stop and ask when existing guidance conflicts with the requested workflow and the correct merge is
+  unclear.
+
 ## Process
 
 1. Inspect the repo:
@@ -29,6 +42,7 @@ for a compact root block or the user explicitly wants a separate shared profile.
    - `docs/agents/agent-profile.md`
    - `CONTEXT.md`, `CONTEXT-MAP.md`, and ADR directories
    - existing project docs that mention issue workflow, labels, statuses, or GitHub Projects
+   - existing concurrency, worktree, destructive-command, or rollback guidance
 2. Present what is known and missing.
 3. Ask only for conventions that cannot be inferred safely.
 4. Draft the `## Agent workflow` block and any optional overflow profile.
@@ -80,6 +94,16 @@ Use this structure in `AGENTS.md` or `CLAUDE.md`, omitting sections that do not 
 - Context: single-context or multi-context
 - Glossary:
 - ADRs:
+
+### Concurrent agent safety
+
+- Other agents may be editing this repo at the same time.
+- Do not revert, overwrite, delete, or reformat changes you did not make.
+- Check current Git/worktree state before editing.
+- Re-read files immediately before patching if they may have changed.
+- Preserve unrelated user/agent changes, even when working in the same files.
+- If conflict scope is unclear or broad, stop and report exact files before continuing.
+- Never run destructive Git/file commands unless explicitly requested.
 
 ### Workflow stops
 

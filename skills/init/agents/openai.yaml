@@ -1,4 +1,4 @@
 interface:
   display_name: "Init"
   short_description: "Initialize repo-local FD workflow context"
-  default_prompt: "Use $fd:init to create or update repo-local FD workflow context, including GitHub issue/project metadata, status flow, custom fields, and domain docs layout."
+  default_prompt: "Use $fd:init to create or update repo-local FD workflow context, including GitHub issue/project metadata, status flow, custom fields, domain docs layout, and concurrent-agent safety guidance."
