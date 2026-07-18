@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Use to review uncommitted, staged, working-tree, or pending-commit changes for defects, regressions, security/unsafe behavior, and missing tests.
+description: Use when reviewing uncommitted, staged, working-tree, or pending-commit changes for defects, security, or test gaps.
 ---
 
 # FD Code Review

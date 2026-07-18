@@ -1,6 +1,6 @@
 ---
 name: triage
-description: Use when investigating a reported error, regression, suspicious behavior, failed workflow, unexpected output, or possible defect before fixing.
+description: Use when investigating errors, regressions, failed workflows, unexpected output, or possible defects before fixing.
 ---
 
 # FD Triage

@@ -1,6 +1,6 @@
 ---
 name: improve-architecture
-description: Use when finding architecture refactors, deepening opportunities, module-boundary issues, testability gaps, or AI-navigability improvements.
+description: Use when seeking architecture refactors, deepening opportunities, module boundaries, testability, or AI navigability.
 ---
 
 # FD Improve Architecture

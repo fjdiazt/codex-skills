@@ -1,6 +1,6 @@
 ---
 name: git
-description: Use when initializing, committing, syncing, renaming, or otherwise managing a Git repo where safety, history preservation, or project conventions matter.
+description: Use when initializing, committing, syncing, or renaming a Git repo where safety or history preservation matters.
 ---
 
 # FD Git

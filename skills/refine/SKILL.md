@@ -1,6 +1,6 @@
 ---
 name: refine
-description: Use when refining a mixed business and technical request, clarifying scope, requirements, assumptions, architecture direction, feature creep, or plan risk before implementation.
+description: Use when clarifying scope, requirements, assumptions, architecture direction, feature creep, or plan risk.
 ---
 
 # FD Refine

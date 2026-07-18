@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: Use for quick functional POCs inside existing apps, trying an idea, validating a tiny interaction, or building just enough behavior for approval.
+description: Use when building a small functional POC inside an existing app to validate an interaction or behavior before approval.
 ---
 
 # FD Prototype

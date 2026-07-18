@@ -1,6 +1,6 @@
 ---
 name: discovery
-description: Use when scanning, locating, tracing, mapping, understanding, or validating how something works in a codebase without editing files.
+description: Use when scanning, locating, tracing, or understanding codebase behavior read-only without architecture assessment.
 ---
 
 # FD Discovery

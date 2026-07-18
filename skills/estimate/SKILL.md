@@ -1,6 +1,6 @@
 ---
 name: estimate
-description: Use when estimating engineering effort, delivery time, prior investment, feature size, or future scope from repo evidence, git history, and explicit assumptions.
+description: Use when estimating effort, delivery time, investment, feature size, or future scope from repo evidence or git history.
 ---
 
 # FD Estimate

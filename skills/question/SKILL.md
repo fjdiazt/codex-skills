@@ -1,6 +1,6 @@
 ---
 name: question
-description: Use when the user says "this is just a question, don't implement or change anything", asks question-only/no edits/do not implement/no changes, or wants a read-only answer.
+description: Use when user asks for a question-only, read-only response with no implementation or file changes.
 ---
 
 # Question

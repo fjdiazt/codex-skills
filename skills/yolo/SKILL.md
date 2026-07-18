@@ -1,6 +1,6 @@
 ---
 name: yolo
-description: Use when the user wants hands-off implementation of a clear build, change, patch, prototype, or wiring request, or says "yolo", "just do it", "ship it", or similar.
+description: Use when user requests hands-off implementation of a clear change or says yolo, just do it, or ship it.
 ---
 
 # FD YOLO

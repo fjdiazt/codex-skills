@@ -1,6 +1,6 @@
 ---
 name: refine-and-doc
-description: Use when refining requirements while updating durable project docs, domain glossary terms, CONTEXT.md, ADRs, or documented decisions as they crystallize.
+description: Use when refining requirements while updating CONTEXT.md, ADRs, glossary terms, or documented decisions.
 ---
 
 # FD Refine And Doc

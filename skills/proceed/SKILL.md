@@ -1,6 +1,6 @@
 ---
 name: proceed
-description: Use to execute a clear plan, continue approved work, or apply a targeted post-triage fix. Triggers include proceed, continue, fix it, patch this.
+description: Use when executing an approved plan, continuing agreed work, or applying a targeted post-triage fix or patch.
 ---
 
 # FD Proceed

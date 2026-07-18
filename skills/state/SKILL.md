@@ -1,6 +1,6 @@
 ---
 name: state
-description: Use when saving, loading, updating, or recording durable session context, handover notes, or findings in repo docs.
+description: Use when saving, loading, or updating durable session context, handover notes, or findings in repository docs.
 ---
 
 # FD State

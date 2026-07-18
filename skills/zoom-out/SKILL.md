@@ -1,6 +1,6 @@
 ---
 name: zoom-out
-description: Use when the user asks for broader codebase context, a higher-level module map, caller map, or explanation of how an unfamiliar area fits together.
+description: Use when user needs broader codebase context, a higher-level module or caller map, or orientation in an unfamiliar area.
 ---
 
 # FD Zoom Out

@@ -1,6 +1,6 @@
 ---
 name: sniff
-description: Use when inspecting a codebase area for smells, brittle patches, workaround code, architecture drift, duplication, hidden coupling, or maintainability risk without editing files.
+description: Use when auditing code read-only for smells, brittle patches, workarounds, drift, duplication, or hidden coupling.
 ---
 
 # FD Sniff
