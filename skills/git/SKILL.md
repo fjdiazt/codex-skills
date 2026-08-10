@@ -35,4 +35,5 @@ Manage repo lifecycle.
 
 - Confirm before destructive operations.
 - Match existing commit style and branching.
+- Unless the user specifies destinations, `push` means push the current branch to every configured `origin` push URL. If destinations use separate remotes, push each destination remote. Explicit exclusions override this default.
 - Run `git status` after repo operations.
