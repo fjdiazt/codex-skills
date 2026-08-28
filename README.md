@@ -32,7 +32,6 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
 | `fd:code-review` | Review uncommitted local changes before commit or PR for concrete defects, likely regressions, and meaningful test gaps. |
-| `fd:trace` | Add and use diagnostic trace logs optimized for Codex/agent debugging and root-cause investigation. |
 | `fd:proceed` | Execute agreed work or run hands-off when the user says yolo. |
 | `fd:state` | Manage durable session context and findings. |
 | `fd:git` | Repository lifecycle operations and project-specific Git workflow macros. |
@@ -71,10 +70,6 @@ $fd:code-review "Review my uncommitted changes before I commit."
 
 ```text
 $fd:improve-architecture "Audit src/services for real duplication or brittle error handling."
-```
-
-```text
-$fd:trace "Add diagnostic trace logs around the setup action flow so Codex can read them back and diagnose the mismatch."
 ```
 
 ### Implementation
@@ -172,7 +167,7 @@ skills/
 Validate an individual skill with:
 
 ```powershell
-python C:\Users\Fred\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\src\codex-skills\skills\trace
+python C:\Users\Fred\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\src\codex-skills\skills\state
 ```
 
 Validate the plugin with:
