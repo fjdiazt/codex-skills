@@ -1,4 +1,4 @@
 interface:
   display_name: "Question"
-  short_description: "Question-only, no-change mode"
-  default_prompt: "Use $fd:question: this is just a question, don't implement or change anything. Inspect read-only only if useful."
+  short_description: "Read-only answers, no changes"
+  default_prompt: "Use $fd:question to answer read-only without implementing or changing anything."

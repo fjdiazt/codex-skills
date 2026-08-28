@@ -1,4 +1,0 @@
-interface:
-  display_name: "Mockup"
-  short_description: "HTML visual options and diagrams"
-  default_prompt: "Use $fd:mockup to create 3 or more visual HTML options, diagrams, or comparisons in a temp artifact or local server, without changing app source unless promotion is explicitly approved."

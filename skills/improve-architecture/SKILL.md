@@ -1,11 +1,19 @@
 ---
 name: improve-architecture
-description: Use when seeking architecture refactors, deepening opportunities, module boundaries, testability, or AI navigability.
+description: Use when auditing architecture, code smells, brittle patches, duplication, module boundaries, or testability.
 ---
 
 # FD Improve Architecture
 
-Find architectural friction and refactors that turn shallow modules into deep ones.
+Find evidence-backed architectural problems and refactors that turn shallow modules into deep ones. Stay read-only until the user explicitly asks to implement.
+
+## Rules
+
+- Do not modify files, run formatters, generators, migrations, cleanup scripts, or commands that write outputs.
+- Prefer evidence over taste. Ignore style preferences unless they create real maintainability, correctness, security, UX, performance, operational, or delivery risk.
+- Do not report nice-to-haves or speculative improvements as findings.
+- Cite files, explain impact, and distinguish confirmed problems from suspicious patterns.
+- Keep the requested scope. Do not expand into a whole-repo audit unless asked.
 
 ## Vocabulary
 
@@ -33,10 +41,20 @@ Principles:
 2. If no changes and no target, ask whether to review the whole project or a specific area.
 3. Read domain glossary first when present: `CONTEXT.md`, README files, nearby domain docs.
 4. Read relevant ADRs when present: `docs/adr/`, `docs/ADRs/`, `adr/`, or equivalent project decision records.
-5. Note shallow modules, concept-chasing across many files, tests only around extracted pure functions, leaky seams, and hard-to-test behavior.
+5. Map the relevant code, tests, and config. Look for shallow modules, concept-chasing, duplicated logic, hidden state or source-of-truth confusion, brittle workarounds, architecture drift, hidden coupling, leaky seams, and hard-to-test behavior.
 6. Apply the deletion test to suspected shallow modules.
 7. Consider existing project patterns, SOLID principles, or named patterns only when they clarify a candidate.
-8. Present a numbered list of deepening opportunities.
+8. Choose the report shape from the user's request: audit findings or architecture candidates.
+
+## Audit Findings
+
+Use this shape when the user asks to sniff, audit, inspect code smells, find technical debt, or review brittle patches. Report only real findings, highest severity first, with **Files**, **Evidence**, **Impact**, **Remediation direction**, and **Residual risk**. If no real issue survives review, say so.
+
+Stop at the report. Do not turn findings into edits unless the user asks to proceed.
+
+## Architecture Candidates
+
+Use this shape when the user asks for architecture refactors, deepening opportunities, boundary improvements, or alternative module designs. Present a numbered list of deepening opportunities.
 
 For each candidate: **Status** (`open`, `grilling`, `ready`, `rejected`, `deferred`, `done`), **Strength** (`strong`, `worth exploring`, `speculative`), **Files**, **Problem**, **Solution**, **Benefits** for locality/leverage/tests.
 

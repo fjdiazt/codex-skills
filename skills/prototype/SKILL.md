@@ -59,7 +59,7 @@ Keep brainstorming alive. Prototype is evidence, not final implementation. After
 | Mistake | Fix |
 | --- | --- |
 | Building full feature | Cut to one approval question. |
-| Making static mockup | Use `fd:mockup` instead, unless interaction must run in the app. |
+| Making static mockup | Keep it outside the app; use a temp artifact unless interaction must run in the app. |
 | Refactoring app first | Use existing seam, even if imperfect. |
 | Treating prototype as done | Ask before promotion. |
 | Committing by default | Wait for explicit commit request. |

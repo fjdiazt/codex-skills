@@ -1,4 +1,4 @@
 interface:
   display_name: "Proceed"
-  short_description: "Execute agreed plans by stage."
-  default_prompt: "Use $fd:proceed to execute the agreed plan by stage or coherent feature group, stopping only for high-risk changes, clarification, out-of-scope issues, plan-breaking validation failures, or review/commit checkpoints."
+  short_description: "Execute agreed work or run hands-off."
+  default_prompt: "Use $fd:proceed to execute agreed work; when I say yolo, switch to hands-off mode, skip approval checkpoints, retry ordinary failures, and continue until verified or a safety stop applies."

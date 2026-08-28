@@ -1,4 +1,0 @@
-interface:
-  display_name: "Estimate"
-  short_description: "Estimate effort from scope and git history"
-  default_prompt: "Use $fd:estimate to estimate this effort from repository evidence, git history when available, and explicit assumptions. Include numeric ranges, git stats used, and caveats."

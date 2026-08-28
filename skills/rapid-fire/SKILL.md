@@ -42,8 +42,7 @@ Still defer broad suites, full integration workflows, release builds, diff audit
 until wrap-up unless the user explicitly asks for them.
 
 If a requested bug fix needs a real reproduction loop, ranked hypotheses, or regression coverage
-outside cheap rapid iteration, switch to `fd:diagnose` unless the user explicitly keeps it in
-rapid-fire mode.
+outside cheap rapid iteration, leave rapid-fire mode unless the user explicitly keeps it there.
 
 ## Allowed Verification
 

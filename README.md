@@ -25,42 +25,26 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 
 | Skill | Purpose |
 | --- | --- |
-| `fd:refine` | Refine mixed business and technical requests, separate requirements from assumptions, and check architecture direction before implementation. |
-| `fd:init` | Initialize repo-local FD workflow context such as GitHub projects, statuses, custom fields, and domain docs. |
-| `fd:refine-and-doc` | Refine requests while updating `CONTEXT.md` and ADRs as terminology or decisions crystallize. |
-| `fd:improve-architecture` | Find deepening opportunities and architecture improvements in a codebase. |
+| `fd:refine` | Clarify vague wording into a read-only requirement brief before solution design. |
+| `fd:improve-architecture` | Audit evidence-backed code smells or find deepening architecture opportunities. |
 | `fd:zoom-out` | Step back from unfamiliar code and map the relevant modules, callers, and domain vocabulary. |
 | `fd:question` | Treat a request as just a question, with no implementation or changes. |
 | `fd:discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
-| `fd:diagnose` | Root-cause confirmed hard bugs, flaky bugs, and performance regressions with a reproducible feedback loop. |
 | `fd:code-review` | Review uncommitted local changes before commit or PR for concrete defects, likely regressions, and meaningful test gaps. |
-| `fd:sniff` | Read-only smell and technical-debt audit focused on real issues, not nice-to-haves. |
 | `fd:trace` | Add and use diagnostic trace logs optimized for Codex/agent debugging and root-cause investigation. |
-| `fd:estimate` | Estimate effort from scope, repository evidence, and git history when available. |
-| `fd:proceed` | Execute an agreed plan or targeted fix while stopping on surprises or ambiguous behavior. |
-| `fd:yolo` | Implement a clear request hands-off with high autonomy until complete or blocked by a safety stop. |
+| `fd:proceed` | Execute agreed work or run hands-off when the user says yolo. |
 | `fd:state` | Manage durable session context and findings. |
 | `fd:git` | Repository lifecycle operations and project-specific Git workflow macros. |
-| `fd:github` | GitHub issue and project workflows for Fred's repositories. |
 | `fd:rapid-fire` | Back-to-back lightweight changes with narrow verification. |
 | `fd:prototype` | Build tiny functional local app POCs for approval without full materialization. |
-| `fd:mockup` | Create HTML visual options, diagrams, and comparisons without changing app source by default. |
 
 ## Usage Examples
 
 ### Refinement
 
 ```text
-$fd:init "Set up FD workflow context for this repo."
-```
-
-```text
-$fd:refine "I want this setup flow simplified. The toolbar probably needs a separate refresh path, but don't treat that as a hard requirement."
-```
-
-```text
-$fd:refine-and-doc "Let's clarify this payment retry behavior and record any domain terms or ADR-worthy decisions."
+$fd:refine "I want checkout to feel safer and less confusing, but this requirement is still vague."
 ```
 
 ### Investigation
@@ -82,23 +66,15 @@ $fd:triage "Bug: /users returns 500 when payload is empty. Triage before fixing.
 ```
 
 ```text
-$fd:diagnose "Root-cause this flaky export failure and add a regression test."
-```
-
-```text
 $fd:code-review "Review my uncommitted changes before I commit."
 ```
 
 ```text
-$fd:sniff "Sniff src/services for real duplication or brittle error handling."
+$fd:improve-architecture "Audit src/services for real duplication or brittle error handling."
 ```
 
 ```text
 $fd:trace "Add diagnostic trace logs around the setup action flow so Codex can read them back and diagnose the mismatch."
-```
-
-```text
-$fd:estimate "How much effort have we invested in this module, and how long would a similar feature take?"
 ```
 
 ### Implementation
@@ -112,7 +88,7 @@ $fd:proceed "Fix the null token crash in AuthService.ts."
 ```
 
 ```text
-$fd:yolo "Wire up the submit button to the API and verify it."
+$fd:proceed "Yolo: wire up the submit button to the API and verify it."
 ```
 
 ```text
@@ -121,10 +97,6 @@ $fd:rapid-fire "Make these small copy tweaks quickly; skip heavy checks until wr
 
 ```text
 $fd:prototype "Build just enough of this toolbar behavior in the app so I can approve the interaction."
-```
-
-```text
-$fd:mockup "Show me three HTML options for this mobile lightbox toolbar."
 ```
 
 ## Prompt Macros
@@ -159,11 +131,9 @@ reviewing upstream changes, compare intent and workflow fit before porting new g
 
 | Local skill | Upstream source |
 | --- | --- |
-| `fd:refine` | Adapted from [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me), renamed and reframed around requirements refinement and architecture alignment. |
-| `fd:refine-and-doc` | Adapted from [`grill-with-docs`](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs). |
+| `fd:refine` | Adapted from [`grill-me`](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) and [`grill-with-docs`](https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs), reframed around requirement clarification and optional documentation. |
 | `fd:improve-architecture` | Adapted from [`improve-codebase-architecture`](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture). |
 | `fd:zoom-out` | Adapted from [`zoom-out`](https://github.com/mattpocock/skills/tree/main/skills/engineering/zoom-out). |
-| `fd:diagnose` | Adapted from [`diagnose`](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnose), scoped to run after FD triage and to use `fd:trace` for instrumentation. |
 
 `fd:code-review` is not listed as an adaptation. Matt Pocock's repo has an in-progress
 [`review`](https://github.com/mattpocock/skills/tree/main/skills/in-progress/review) skill, but it
