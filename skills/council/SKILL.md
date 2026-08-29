@@ -30,6 +30,8 @@ Independent convergence strengthens a candidate; it does not prove it.
 
 Circulate all reports to every completed member. Each member critiques competing claims, answers challenges, and may revise its proposal. Orchestrator joins discussion by testing evidence, exposing unsupported assumptions, and keeping debate on the original task.
 
+After independent reporting closes, compile all completed reports into one packet, then fan it out to every completed member concurrently. Each member receives one discussion request containing the full collection. Do not send reports incrementally, start discussion member-by-member, or wait for one discussion response before dispatching the others.
+
 Strong disagreement may indicate missing logs, incompatible assumptions, multiple root causes, or patch stacking. Seek the smallest discriminating evidence instead of stacking patches.
 
 ## 3. Vote
