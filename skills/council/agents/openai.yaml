@@ -1,0 +1,4 @@
+interface:
+  display_name: "Council"
+  short_description: "Independent agent debate and evidence vote"
+  default_prompt: "Use $fd:council with 3 agents to independently analyze this problem, discuss their findings, and vote on the best evidence-backed solution."

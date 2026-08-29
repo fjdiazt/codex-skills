@@ -31,6 +31,7 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:question` | Treat a request as just a question, with no implementation or changes. |
 | `fd:discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
+| `fd:council` | Have multiple agents independently analyze one problem, discuss evidence, and vote on a recommendation. |
 | `fd:code-review` | Review uncommitted local changes before commit or PR for concrete defects, likely regressions, and meaningful test gaps. |
 | `fd:proceed` | Execute agreed work or run hands-off when the user says yolo. |
 | `fd:state` | Manage durable session context and findings. |
@@ -62,6 +63,10 @@ $fd:zoom-out "I don't know this billing area well. Map the relevant modules and 
 
 ```text
 $fd:triage "Bug: /users returns 500 when payload is empty. Triage before fixing."
+```
+
+```text
+$fd:council 3 agents: investigate this intermittent failure independently, discuss the evidence, and recommend the best solution.
 ```
 
 ```text
