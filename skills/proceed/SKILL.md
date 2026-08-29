@@ -1,6 +1,6 @@
 ---
 name: proceed
-description: Use when executing agreed work, applying a targeted fix, or user says yolo/just do it/ship it for hands-off completion.
+description: Use when user asks to execute agreed work, apply a targeted fix, proceed hands-off, or says yolo, just do it, ship it, yolo end to end, or yolo all the way.
 ---
 
 # FD Proceed
@@ -11,7 +11,10 @@ Execute clear work without re-litigating the plan. Keep momentum; stop on real r
 
 1. **Proceed**: Execute an agreed plan by coherent stage.
 2. **Fix**: Apply a targeted fix only after evidence supports the cause.
-3. **YOLO**: Complete clear work hands-off when the user says `yolo`, `just do it`, `ship it`, or rejects plan-approval checkpoints. Read and apply `references/YOLO.md` before acting.
+3. **YOLO**: Complete clear local work hands-off when the user says `yolo`, `just do it`, `ship it`, or rejects plan-approval checkpoints.
+4. **YOLO Delivery**: When the user says the exact phrase `yolo end to end` or `yolo all the way`, execute every applicable step in the repository's established delivery workflow, including commit, push, PR/release, and deployment.
+
+For either YOLO mode, read and apply `references/YOLO.md` before acting.
 
 ## Guardrails
 
@@ -34,5 +37,5 @@ Execute clear work without re-litigating the plan. Keep momentum; stop on real r
 
 ## References
 
-- `references/YOLO.md`: advance approval, completion loop, and safety stops for explicit hands-off mode.
+- `references/YOLO.md`: mode selection, approval boundaries, completion loop, and safety stops for explicit hands-off modes.
 

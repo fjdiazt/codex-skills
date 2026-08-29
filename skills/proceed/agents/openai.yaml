@@ -1,4 +1,4 @@
 interface:
   display_name: "Proceed"
   short_description: "Execute agreed work or run hands-off."
-  default_prompt: "Use $fd:proceed to execute agreed work; when I say yolo, switch to hands-off mode, skip approval checkpoints, retry ordinary failures, and continue until verified or a safety stop applies."
+  default_prompt: "Use $fd:proceed to execute agreed work; treat yolo as hands-off local completion, and yolo end to end or yolo all the way as approval for the repository's established commit, push, release, deploy, and verification workflow."

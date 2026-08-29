@@ -33,7 +33,7 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:council` | Have multiple agents independently analyze one problem, discuss evidence, and vote on a recommendation. |
 | `fd:change-my-mind` | Challenge an idea fairly with evidence and rewrite the strongest version that survives. |
 | `fd:code-review` | Review uncommitted local changes before commit or PR for concrete defects, likely regressions, and meaningful test gaps. |
-| `fd:proceed` | Execute agreed work or run hands-off when the user says yolo. |
+| `fd:proceed` | Execute agreed work; `yolo` runs hands-off locally, while `yolo end to end` or `yolo all the way` completes the established delivery workflow. |
 | `fd:state` | Manage durable session context and findings. |
 | `fd:git` | Repository lifecycle operations and project-specific Git workflow macros. |
 | `fd:rapid-fire` | Back-to-back lightweight changes with narrow verification. |
@@ -89,6 +89,10 @@ $fd:proceed "Fix the null token crash in AuthService.ts."
 
 ```text
 $fd:proceed "Yolo: wire up the submit button to the API and verify it."
+```
+
+```text
+$fd:proceed "Fix the release blocker, yolo end to end."
 ```
 
 ```text
