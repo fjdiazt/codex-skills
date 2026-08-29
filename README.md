@@ -28,7 +28,6 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:refine` | Clarify vague wording into a read-only requirement brief before solution design. |
 | `fd:improve-architecture` | Audit evidence-backed code smells or find deepening architecture opportunities. |
 | `fd:zoom-out` | Step back from unfamiliar code and map the relevant modules, callers, and domain vocabulary. |
-| `fd:question` | Treat a request as just a question, with no implementation or changes. |
 | `fd:discovery` | Read-only codebase exploration, call-chain tracing, and theory falsification. |
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
 | `fd:council` | Have multiple agents independently analyze one problem, discuss evidence, and vote on a recommendation. |
@@ -48,10 +47,6 @@ $fd:refine "I want checkout to feel safer and less confusing, but this requireme
 ```
 
 ### Investigation
-
-```text
-$fd:question "This is just a question, don't implement or change anything."
-```
 
 ```text
 $fd:discovery "Trace the call chain from the LoginController to the password hash check."
