@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change My Mind"
+  short_description: "Evidence-backed challenge for any claim"
+  default_prompt: "Use $fd:change-my-mind to challenge this idea fairly, test it against evidence, and rewrite the strongest version that survives."
