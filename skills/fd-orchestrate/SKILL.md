@@ -17,6 +17,7 @@ Delegate implementation to user-selected cheaper models. Optimize total effort, 
 
 - Inspect enough context to define clear assignments. Reuse an existing implementation plan; write a short one only when needed to resolve scope or dependencies.
 - Give workers self-contained outcomes, relevant paths, ownership boundaries, constraints, acceptance criteria, and any applicable plan. Request a concise completion report covering changes, blockers, and verification performed or deferred.
+- Include the test policy in every assignment: no full-suite runs; only focused tests needed for TDD or debugging. Completion and review are not test triggers.
 - Delegate substantial implementation; avoid duplicating worker investigation or prescribing every edit. Workers may add needed tests during implementation.
 - Spawn parallel workers only for independent assignments that can proceed immediately without waiting for each other's output and without conflicting edits. Shared contracts must be settled first. Otherwise use one worker or sequential assignments; do not spawn idle dependents.
 - Use the fewest workers that provide useful concurrency. Workers must not spawn additional agents without orchestrator coordination.
@@ -32,9 +33,10 @@ Delegate implementation to user-selected cheaper models. Optimize total effort, 
 
 - Integrate completed work, then review the whole resulting diff for correctness, regressions, scope, and test gaps.
 - Batch actionable findings into one correction request. Reuse the responsible worker for substantial fixes; fix small issues directly when cheaper than another roundtrip. Review corrections after they finish.
-- Run required tests and appropriate integrated verification at the end, not after every turn or worker response. Workers should defer broad suites to this final pass.
-- Allow focused checks needed for debugging, explicit TDD, or required repository gates during implementation. Avoid repeating checks without changed code or new evidence.
-- If final checks fail, correct the failures and rerun affected checks before completion. Report unresolved failures or unavailable verification honestly.
+- Neither workers nor orchestrator run tests merely because a worker finishes, a turn ends, or a review occurs. During implementation, run only focused tests needed for TDD or debugging; avoid repeating checks without changed code or new evidence.
+- The orchestrator alone runs the entire applicable test suite, once all implementation, integration, code review, and review corrections are complete. Workers never run the full suite, including during TDD. Do not replace final full-suite validation with only affected tests.
+- If final validation fails, fix directly or delegate a batched correction when expected token savings outweigh the handoff and supervision cost. Use focused checks to diagnose and correct failures, then have the orchestrator rerun the full suite after all corrections are complete. No full-suite runs between individual fixes or reviews.
+- Report unresolved failures or unavailable verification honestly; never claim validation passed when the final suite was not run successfully.
 
 ## Report
 
