@@ -1,0 +1,4 @@
+interface:
+  display_name: "FD Orchestrate"
+  short_description: "Delegate implementation; review and test."
+  default_prompt: "Use $fd-orchestrate to delegate implementation to my selected worker models, supervise efficiently, then review and test the completed work."

@@ -32,6 +32,7 @@ The plugin name is `fd`, so skills are exposed as `fd:<skill>`.
 | `fd:triage` | Triage observed issues before fixing; classify bug vs expected behavior, config, environment, or unknown. |
 | `fd:council` | Have multiple agents independently analyze one problem, discuss evidence, and vote on a recommendation. |
 | `fd:change-my-mind` | Challenge an idea fairly with evidence and rewrite the strongest version that survives. |
+| `fd:fd-orchestrate` | Delegate implementation to selected cheaper models; supervise, review completed work, and run final tests. |
 | `fd:code-review` | Review uncommitted local changes before commit or PR for concrete defects, likely regressions, and meaningful test gaps. |
 | `fd:proceed` | Execute agreed work; `yolo` runs hands-off locally, while `yolo end to end` or `yolo all the way` completes the established delivery workflow. |
 | `fd:state` | Manage durable session context and findings. |
